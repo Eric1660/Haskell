@@ -1,0 +1,8 @@
+<header>
+
+^{menu [(HomeR, "Home")(Page2R, "Lanches"), (Page2R, "Pizza")]}
+
+<body>
+
+
+<footer>
