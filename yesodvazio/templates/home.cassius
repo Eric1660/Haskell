@@ -1,0 +1,18 @@
+li
+	display: inline;
+
+ul
+	list-style-type: none;
+
+header
+	background-color: red;
+	text-align: center;
+	color: white;
+
+footer
+	background-color: red;
+	text-align: center;
+	color: white;
+
+body
+	text-align: center;

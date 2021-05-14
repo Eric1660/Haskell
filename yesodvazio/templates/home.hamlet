@@ -1,0 +1,19 @@
+<header>
+
+^{menu [(Page1R, "Usuário")(Page2R, "Lanches"), (Page3R, "Pizza")]}
+
+<body>
+
+<form>
+	<label>
+		Nome:
+		<input type="text" id="name" value="Fulano de Tal">
+	<label>
+		Enderço de Entrega:
+		<input type="text" id="endereço" value="Rua das Ilusões">
+	<label>
+		Numero:
+		<input type="number" id="numero">
+
+		<input type="submit" value="Submit">
+<footer>
