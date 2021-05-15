@@ -14,7 +14,7 @@ Lanches
 Pizza
 
 <body>
-<img src=@{StaticR img_saunduba_png}>
+<img src=@{StaticR img_sanduba_png}>
 <h1>
 Monte seu lanche
 <form>
