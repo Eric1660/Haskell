@@ -1,8 +1,70 @@
 <header>
 
-^{menu [(HomeR, "Home")(Page2R, "Lanches"), (Page2R, "Pizza")]}
+<ul>
+<li>
+<a href=@{HomeR}>
+Home
+
+<li>
+<a href=@{Page1R}>
+Lanches
+
+<li>
+<a href=@{Page2R}>
+Pizza
 
 <body>
+<img src=@{StaticR img_saunduba_png}>
+<h1>
+Monte seu lanche
+<form>
+<h2>
+Tipos de Pães
+<input type="radio" id="pãocomun" name="bread" value="pãocomun">
+<label for="pãocomun">
+Pão Comun
+<input type="radio" id="pãogengibre" name="bread" value="pãogengibre">
+<label for="pãogengibre">
+Pão de Gengibre
+
+<h2>
+Tipos de Carne
+<input type="radio" id="hbovino" name="burger" value="hbovino">
+<label for="hbovino">
+Hambúrguer Normal
+<input type="radio" id="hfrango" name="burger" value="hfrango">
+<label for="hfrango">
+Hambúrguer de Frango
+<input type="radio" id="hpeixe" name="burger" value="hpeixe">
+<label for="hpeixe">
+File de Peixe
+
+<h3>
+Os lanches complemeta salada e tomate.
+
+<h2>
+Bebida
+<input type="radio" id="coca" name="bebida" value="coca">
+<label for="coca">
+Coca-Cola............R$ 4,00
+<input type="radio" id="pepsi" name="bebida" value="pepsi">
+<label for="pepsi">
+Pepsi................R$ 3,00
+<input type="radio" id="guarana" name="bebida" value="guarana">
+<label for="guarana">
+Guaraná..............R$ 2,50
+<input type="radio" id="nenhum" name="bebida" value="nenhum">
+<label for="nenhum">
+Nenhum
+
+
+<label for="endereco">First name:
+<input type="text" id="endereco" name="endereco">
+
+
+<input type="submit" value="Pedir">
 
 
 <footer>
+<h2>
+Trabalho de Haskell

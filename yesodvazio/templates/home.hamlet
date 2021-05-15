@@ -1,19 +1,34 @@
 <header>
 
-^{menu [(Page1R, "Usuário")(Page2R, "Lanches"), (Page3R, "Pizza")]}
+<ul>
+    <li>
+        <a href=@{HomeR}>
+            Home
+    
+    <li>
+        <a href=@{Page1R}>
+            Lanches
+            
+    <li>
+        <a href=@{Page2R}>
+            Pizza
+
 
 <body>
+<h1>
+    Temos os Melhores Lanches e Pizzas da Região!!
 
+<h2>
+    Fale com a gente
 <form>
-	<label>
-		Nome:
-		<input type="text" id="name" value="Fulano de Tal">
-	<label>
-		Enderço de Entrega:
-		<input type="text" id="endereço" value="Rua das Ilusões">
-	<label>
-		Numero:
-		<input type="number" id="numero">
+    <label for="fname">Nome:
+    <input type="text" id="fname" name="fname">
+    <label for="e-mail">E-mail:
+    <input type="email" id="e-mail" name="e-mai">
+    <label for="mensagem">Sua Mensagem:
+    <textarea id="mensagem" name="mensagem" rows="4" cols="50">
+    <input type="submit" value="Submit">
 
-		<input type="submit" value="Submit">
 <footer>
+<h2>
+    Trabalho de Haskell

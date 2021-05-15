@@ -7,41 +7,28 @@
 module Handler.Home where
 
 import Import
--- import Network.HTTP.Types.Status
--- import Database.Persist.Postgresql
+import Text.Lucius
+import Network.HTTP.Types.Status
+import Database.Persist.Postgresql
 
--- defaultLayout converte um Widget (front) 
--- para Handler (back)
+getPage1R :: Handler Html
+getPage1R = do
+	defaultLayoult $ do
+		addStylesheet (StaticR css_bootstrap_css)
+		toWidgetHead $(luciusFile "templates/home.lucius")
+		$(whamletFile "templates/page1r.hamlet")
+
+getPage2R :: Handler Html
+getPage2R = do
+	defaultLayoult $ do
+		addStylesheet (StaticR css_bootstrap_css)
+		toWidgetHead $(luciusFile "templates/home.lucius")
+		$(whamletFile "templates/page2r.hamlet")
+		
 getHomeR :: Handler Html
 getHomeR = do
-    defaultLayout $ do
-        toWidgetHead [julius|
-            function ola(){
-                alert("ola mundo!");
-            }
-        |]
-        -- css/bootstrap.css
+    defaultLayoult $ do
+	 -- css/bootstrap.css
         addStylesheet (StaticR css_bootstrap_css)
-        toWidgetHead [cassius|
-            h1 
-                color: red;
-        |]
-        [whamlet|
-            <h1>
-                OLA MUNDO
-                
-            <button onclick="ola()"> 
-                Click
-                
-            <img src=@{StaticR img_fatec_png}>
-        |]
-
-
-
-
-
-
-
-
-
-
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/home.hamlet")
