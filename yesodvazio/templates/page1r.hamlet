@@ -1,17 +1,17 @@
 <header>
 
 <ul>
-<li>
-<a href=@{HomeR}>
-Home
-
-<li>
-<a href=@{Page1R}>
-Lanches
-
-<li>
-<a href=@{Page2R}>
-Pizza
+    <li>
+        <a href=@{HomeR}>
+            Home
+    
+    <li>
+        <a href=@{Page1R}>
+            Lanches
+            
+    <li>
+        <a href=@{Page2R}>
+            Pizza
 
 <body>
 <img src=@{StaticR img_sanduba_png}>
@@ -58,7 +58,7 @@ Guaraná..............R$ 2,50
 Nenhum
 
 
-<label for="endereco">First name:
+<label for="endereco">Endereço de Entrega:
 <input type="text" id="endereco" name="endereco">
 
 
