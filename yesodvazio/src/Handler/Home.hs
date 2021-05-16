@@ -13,22 +13,22 @@ import Database.Persist.Postgresql
 
 getPage1R :: Handler Html
 getPage1R = do
-	defaultLayout $ do
-		addStylesheet (StaticR css_bootstrap_css)
-		toWidgetHead $(luciusFile "templates/home.lucius")
-		$(whamletFile "templates/page1r.hamlet")
+    defaultLayout $ do
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/page1r.hamlet")
 
 getPage2R :: Handler Html
 getPage2R = do
-	defaultLayout $ do
-		addStylesheet (StaticR css_bootstrap_css)
-		toWidgetHead $(luciusFile "templates/home.lucius")
-		$(whamletFile "templates/page2r.hamlet")
-		
+    defaultLayout $ do
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/page2r.hamlet")
+
 getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
-	 -- css/bootstrap.css
+        -- css/bootstrap.css
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/home.hamlet")

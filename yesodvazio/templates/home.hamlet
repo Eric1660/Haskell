@@ -1,34 +1,33 @@
 <header>
-
-<ul>
-    <li>
-        <a href=@{HomeR}>
-            Home
+    <ul>
+        <li>
+            <a href=@{HomeR}>
+                Home
     
-    <li>
-        <a href=@{Page1R}>
-            Lanches
+        <li>
+            <a href=@{Page1R}>
+                Lanches
             
-    <li>
-        <a href=@{Page2R}>
-            Pizza
+        <li>
+            <a href=@{Page2R}>
+                Pizza
 
 
 <body>
-<h1>
-    Temos os Melhores Lanches e Pizzas da Região!!
+    <h1>
+        Temos os Melhores Lanches e Pizzas da Região!!
 
-<h2>
-    Fale com a gente
-<form>
-    <label for="fname">Nome:
-    <input type="text" id="fname" name="fname">
-    <label for="e-mail">E-mail:
-    <input type="email" id="e-mail" name="e-mai">
-    <label for="mensagem">Sua Mensagem:
-    <textarea id="mensagem" name="mensagem" rows="4" cols="50">
-    <input type="submit" value="Submit">
+    <h2>
+        Fale com a gente
+    <form>
+        <label for="fname">Nome:
+        <input type="text" id="fname" name="fname">
+        <label for="e-mail">E-mail:
+        <input type="email" id="e-mail" name="e-mai">
+        <label for="mensagem">Sua Mensagem:
+        <textarea id="mensagem" name="mensagem" rows="4" cols="50">
+        <input type="submit" value="Enviar">
 
 <footer>
-<h2>
-    Trabalho de Haskell
+    <h2>
+        Trabalho de Haskell
