@@ -1,0 +1,30 @@
+function validar() {
+	var address = formuser.address.value;
+
+    if(address == "") {
+		alert('Não colocou endereco');
+		    return false;
+	}
+}
+
+function validarHome() {
+	var nome1 = formuser1.nome1.value;
+	var email1 = formuser1.email1.value;
+	var message = formuser1.message.value;
+			
+    if(nome1 == "") {
+        alert('Não colocou nome');
+            return false;
+    }
+	
+	if(email1 == "" || email1.indexOf('@') == -1|| email1.indexOf('.') == -1) {
+        alert('Não colocou email válido');
+            return false;
+				
+	}
+						
+    if (message == "") {
+        alert("Caixa de mensagem está vazio");
+            return false;
+        }
+    }

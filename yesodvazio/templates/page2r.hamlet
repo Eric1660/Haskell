@@ -19,10 +19,7 @@
     <div class="box">
         <img src=@{StaticR img_pizza_png}>
     <div class="box">
-        <h2>
-            Monte sua Pizza
-    <div class="box">
-        <form>
+        <form name="formuser">
             <div class="box">
                 <h3>
                     Tipos de borda
@@ -83,9 +80,9 @@
 
             <div class="box">
                 <label for="endereco">Endereço de Entrega:
-                <input type="text" id="endereco" name="endereco">
+                <input type="text" id="endereco" name="address">
             <div class="box">
-                <input class="button" type="submit" value="Pedir">
+                <input class="button" type="submit" value="Pedir" onclick="return validar()">
 
 
 <footer>

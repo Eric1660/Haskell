@@ -16,19 +16,16 @@
 
 <body>
     <div class="box">           
-        <img src=@{StaticR img_sanduba_png}>
+        <img src=@{StaticR img_sanduba_png}> 
     <div class="box"> 
-        <h2>
-            Monte seu lanche  
-    <div class="box"> 
-        <form>
+        <form name="formuser">
             <div class="box">
                 <h3>
                     Tipos de Pães
             <div class="box">   	
                 <input type="radio" id="pãocomun" name="bread" value="pãocomun">
                 <label for="pãocomun">
-                    Pão Comun 
+                    Pão Comun
                 <input type="radio" id="pãogengelim" name="bread" value="pãogengelim">
                 <label for="pãogengelim">
                     Pão com Gergelim
@@ -73,9 +70,9 @@
 
             <div class="box">   
                 <label for="endereco">Endereço de Entrega:
-                <input type="text" id="endereco" name="endereco">
+                <input type="text" id="endereco" name="address">
             <div class="box">
-                <input class="button" type="submit" value="Pedir">
+                <input class="button" type="submit" value="Pedir" onclick="return validar()">
 
 
 <footer>

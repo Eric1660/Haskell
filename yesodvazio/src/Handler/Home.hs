@@ -8,27 +8,27 @@ module Handler.Home where
 
 import Import
 import Text.Lucius
+import Text.Julius
 import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
 
 getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
-        -- css/bootstrap.css
-        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(juliusFile "templates/home.julius")
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/home.hamlet")
 
 getPage1R :: Handler Html
 getPage1R = do
     defaultLayout $ do
-        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(juliusFile "templates/home.julius")
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/page1r.hamlet")
 
 getPage2R :: Handler Html
 getPage2R = do
     defaultLayout $ do
-        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(juliusFile "templates/home.julius")
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/page2r.hamlet")
