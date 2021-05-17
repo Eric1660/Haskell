@@ -5,7 +5,7 @@
 }
 		
 body {
-	background-color: red;
+	background-color: #009743;
 	display: flex;
 	min-height: 125%;
 	margin: 0 auto;
@@ -15,7 +15,7 @@ body {
 
 header, footer {
 	clear: both;
-	color: red;
+	color: #009743;
 	flex-basis: 100%;
 	background-color: white;
 	padding: 1%;
@@ -38,10 +38,11 @@ ul {
 
 li a {
     display: block;
-    color: red;
+    color: #009743;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+	font-size: 150%;
 }
 
 h1 {
@@ -51,7 +52,7 @@ h1 {
 }
 
 header {
-   margin-bottom: 3%;
+   margin-bottom: 2%;
 }
 
 footer {
@@ -60,16 +61,16 @@ footer {
 	height: 100px;
 	width: 100%;
 	text-align: center;
-	margin-top: 3%;
+	margin-top: 2%;
 }
 
 label {
-    margin-left: 3%;
-	margin-right: 3%;
+    margin-left: 2%;
+	margin-right: 2%;
 }
 
 input, textarea {
-   color: red
+   color: #009743;
 }
 
 .box {
@@ -77,7 +78,7 @@ input, textarea {
     align-items: center;
     justify-content: center;
     width: 100%;
-	margin: 1%;
+	margin: 2%;
 }
 
 .rodape {
@@ -88,10 +89,11 @@ input, textarea {
 }
 
 .button {
-    background-color: white;
+    background-color: #FFCB0A;
 	border: none;
-	color: red;
-	padding: 2%;
+	color: #009743;
+	padding: 15px 32px;
 	margin-top: 5%;
+	border-radius: 12px;
 }
 

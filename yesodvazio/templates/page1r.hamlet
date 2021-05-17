@@ -28,7 +28,7 @@
             <div class="box">   	
                 <input type="radio" id="pãocomun" name="bread" value="pãocomun">
                 <label for="pãocomun">
-                    Pão Comun
+                    Pão Comun 
                 <input type="radio" id="pãogengelim" name="bread" value="pãogengelim">
                 <label for="pãogengelim">
                     Pão com Gergelim
@@ -54,16 +54,19 @@
             <div class="box">   
                 <input type="radio" id="coca" name="bebida" value="coca">
                 <label for="coca">
-                    Coca-Cola............R$ 4,00
+                    Coca-Cola R$ 4,00
                 <input type="radio" id="pepsi" name="bebida" value="pepsi">
                 <label for="pepsi">
-                    Pepsi................R$ 3,00
+                    Pepsi  R$ 3,00
                 <input type="radio" id="guarana" name="bebida" value="guarana">
                 <label for="guarana">
-                    Guaraná..............R$ 2,50
-                <input type="radio" id="guarana" name="bebida" value="guarana">
-                <label for="guarana">
-                    Fanta Uva............R$ 2,50
+                    Guaraná R$ 2,50
+                <input type="radio" id="fuva" name="bebida" value="fuva">
+                <label for="fuva">
+                    Fanta Uva R$ 2,50
+                <input type="radio" id="agua" name="bebida" value="agua">
+                <label for="agua">
+                    Água Mineral R$ 2,00
                 <input type="radio" id="nenhum" name="bebida" value="nenhum">
                 <label for="nenhum">
                     Nenhum
