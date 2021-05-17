@@ -23,21 +23,19 @@
             Monte sua Pizza
     <div class="box">
         <form>
-            <h3>
-                Tipos de borda
+            <div class="box">
+                <h3>
+                    Tipos de borda
             <div class="box">   
                 <input type="radio" id="bcatupiry" name="borda" value="bcatupiry">
                 <label for="bcatupiry">
                     Borda de catupiry...R$ 7,00
-            <div class="box">
                 <input type="radio" id="bcheddar" name="borda" value="bcheddar">
                 <label for="bcheddar">
                     Borda de cheddar....R$ 7,00
-            <div class="box">
                 <input type="radio" id="bmussarela" name="borda" value="bmussarela">
                 <label for="bmussarela">
                     Borda de mussarela..R$ 7,00
-            <div class="box">
                 <input type="radio" id="bnenhum" name="borda" value="bnenhum">
                 <label for="bnenhum">
                     Nenhuma borda
@@ -48,18 +46,18 @@
                 <input type="radio" id="pizza1" name="burger" value="pizza1">
                 <label for="pizza1">
                     Frango com Catupiry
-            <div class="box">
                 <input type="radio" id="pizza2" name="burger" value="pizza2">
                 <label for="pizza2">
                     Calabresa
-            <div class="box">
                 <input type="radio" id="pizza3" name="burger" value="pizza3">
                 <label for="pizza3">
                     Portuguesa
-            <div class="box">
                 <input type="radio" id="pizza4" name="burger" value="pizza4">
                 <label for="pizza4">
                     4 Queijos
+                <input type="radio" id="pizza4" name="burger" value="pizza4">
+                <label for="pizza4">
+                    Napolitana
             <div class="box">
                 <h3>
                     Bebida
@@ -67,15 +65,15 @@
                 <input type="radio" id="coca" name="bebida" value="coca">
                 <label for="coca">
                     Coca-Cola............R$ 4,00
-            <div class="box">
                 <input type="radio" id="pepsi" name="bebida" value="pepsi">
                 <label for="pepsi">
                     Pepsi................R$ 3,00
-            <div class="box">
                 <input type="radio" id="guarana" name="bebida" value="guarana">
                 <label for="guarana">  
                     Guaraná..............R$ 2,50
-            <div class="box">
+                <input type="radio" id="guarana" name="bebida" value="guarana">
+                <label for="guarana">
+                    Fanta Uva............R$ 2,50
                <input type="radio" id="nenhum" name="bebida" value="nenhum">
                <label for="nenhum">
                     Nenhum
@@ -84,7 +82,7 @@
                 <label for="endereco">Endereço de Entrega:
                 <input type="text" id="endereco" name="endereco">
             <div class="box">
-                <input type="submit" value="Pedir">
+                <input class="button" type="submit" value="Pedir">
 
 
 <footer>

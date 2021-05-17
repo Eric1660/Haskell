@@ -35,7 +35,7 @@
                 <label for="mensagem">Sua Mensagem:
                 <textarea id="mensagem" name="mensagem" rows="4" cols="50">
             <div class="box">
-                <input type="submit" value="Enviar">
+                <input class="button" type="submit" value="Enviar">
 
 <footer class="rodape">
     <h2>
