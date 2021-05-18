@@ -3,21 +3,23 @@
         Lanchonete do Haskell
     <ul>
         <li>
-            <a href=@{HomeR}>
-                Home
-    
-        <li>
             <a href=@{Page1R}>
                 Lanches
             
         <li>
             <a href=@{Page2R}>
                 Pizza
+        <li>
+            <a href=@{HomeR}>
+                Home
 
 <body>
     <div class="box">           
         <img src=@{StaticR img_sanduba_png}> 
     <div class="box"> 
+        <h2>
+            Peça seu Lanche:
+    <div class="box">		
         <form name="formuser">
             <div class="box">
                 <h3>
@@ -42,6 +44,9 @@
                 <input type="radio" id="hpeixe" name="burger" value="hpeixe">
                 <label for="hpeixe">
                     File de Peixe
+                <input type="radio" id="hchurrasco" name="burger" value="hchurrasco">
+                <label for="hchurrascoe">
+                    Churrasco
             <div class="box">   
                 <h3>
                     Os lanches complementa salada e tomate.

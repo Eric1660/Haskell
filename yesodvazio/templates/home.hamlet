@@ -3,16 +3,15 @@
         Lanchonete do Haskell
     <ul>
         <li>
-            <a href=@{HomeR}>
-                Home
-    
-        <li>
             <a href=@{Page1R}>
                 Lanches
             
         <li>
             <a href=@{Page2R}>
                 Pizza
+        <li>
+            <a href=@{HomeR}>
+                Home
 
 
 <body>
@@ -36,6 +35,6 @@
             <div class="box">
                 <input class="button" type="submit" value="Enviar" onclick="return validarHome()">
 
-<footer class="rodape">
+<footer>
     <h2>
         Trabalho de Haskell
