@@ -15,6 +15,9 @@
 
 
 <body>
+    <div class="box">           
+        <img src=@{StaticR img_sanduba2_jpg}>
+        <img src=@{StaticR img_pizza2_jpg}>
     <div class="box">   
         <h2>
             Temos os Melhores Lanches e Pizzas da Região!!
@@ -31,7 +34,7 @@
                 <input type="email" id="e-mail" name="email1">
             <div class="box">
                 <label for="mensagem">Sua Mensagem:
-                <textarea id="mensagem" name="message" rows="4" cols="50">
+                <textarea id="mensagem" name="message" rows="6" cols="30">
             <div class="box">
                 <input class="button" type="submit" value="Enviar" onclick="return validarHome()">
 

@@ -51,14 +51,14 @@ h1 {
 }
 
 header {
-   margin-bottom: 2%;
+   margin-bottom: 3%;
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
-	height: 100px;
-	width: 100%;
+	clear: both;
+    position: relative;
+    height: 100px;
+    margin-top: -200px;
 	text-align: center;
 	margin-top: 2%;
 }
@@ -77,8 +77,8 @@ input, textarea {
     align-items: center;
     justify-content: center;
     width: 100%;
-	margin-top: 1%;
-	margin-botton: 1%;
+	margin-top: 2%;
+	margin-botton: 2%;
 }
 
 .button {

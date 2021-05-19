@@ -1,10 +1,16 @@
 function validar() {
 	var address = formuser.address.value;
+	var quantity = formuser.quantity.value;
 
     if(address == "") {
 		alert('Não colocou endereço');
 		    return false;
 	}
+	
+	if(quantity == "") {
+		alert('Não colocou numero');
+		    return false;
+    }
 }
 
 function validarHome() {
