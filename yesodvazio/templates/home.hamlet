@@ -16,8 +16,8 @@
 
 <body>
     <div class="box">           
-        <img src=@{StaticR img_sanduba2_jpg}>
-        <img src=@{StaticR img_pizza2_jpg}>
+        <img class="image" src=@{StaticR img_sanduba2_jpg}>
+        <img class="image" src=@{StaticR img_pizza2_jpg}>
     <div class="box">   
         <h2>
             Temos os Melhores Lanches e Pizzas da Região!!

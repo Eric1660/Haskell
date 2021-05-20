@@ -90,3 +90,11 @@ input, textarea {
 	border-radius: 12px;
 }
 
+.image {
+	border-style: solid;
+	border-color: #FFCB0A;
+	max-width: 70%;
+    max-height: 70%;
+    width: auto;
+    height: auto;
+}
