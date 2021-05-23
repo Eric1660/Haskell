@@ -18,8 +18,13 @@
             <a href="/bebidas">
                 Bebidas	
 <body>
-
-
+    $maybe mensa <- msg
+        <h2>
+            ^{mensa}
+    
+    <form action=@{ClientR} method=post>
+        ^{widget}
+        <input type="submit" value="Enviar">
 <footer>
     <h2>
         Trabalho de Haskell

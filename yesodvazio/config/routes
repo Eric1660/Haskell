@@ -3,6 +3,21 @@
 /favicon.ico FaviconR GET
 /robots.txt RobotsR GET
 
-/ 	HomeR 	GET 
-/p1	Page1R  GET
-/p2	Page2R  GET
+/ 	HomeR 	GET
+
+/cliente ClientR GET POST
+/clientes                  ListaClieR  GET
+/pedido/#ClienteId         PedidoR  GET
+/cliente/#ClienteId/apagar ApagarClieR POST
+
+/lanche LancheR GET POST
+/lanches                   ListaLancheR GET
+/sandwich/#LancheId        SandwichR    GET
+
+/pizza PizzaR GET POST
+/pizzas                    ListaPizzaR GET
+/mamamia/#PizzaId          MamamiaR    GET
+
+/bebida BebidaR GET POST
+/bebidas                   ListaBebidaR GET
+/drink/#BebidaId           DrinkR    GET

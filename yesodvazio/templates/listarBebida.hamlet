@@ -1,0 +1,46 @@
+<header>
+    <h1>
+        Lanchonete do Haskell
+    <ul>
+        <li>
+            <a href=@{HomeR}>
+                Sobre	
+        <li>
+            <a href="/cliente">
+                Faça seu Pedido
+        <li>
+            <a href="/lanches">
+                Lanches
+        <li>
+            <a href="/pizzas">
+                Pizza
+        <li>
+            <a href="/bebidas">
+                Bebidas	
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    NOME
+                <th>
+                    PREÇO
+                <th>
+                    DESCRIÇAO
+                <th>
+                
+        <tbody>
+            $forall Entity pid bebe <- bebidas
+               <tr>
+                    <td>
+                        <a href=@{DrinkR pid}>
+                            #{bebidaNome bebe}
+                    <td>
+                        #{bebidaPreco bebe}
+                    <td>
+                        #{bebidaDesc bebe}
+                    <td>
+
+<footer>
+    <h2>
+        Trabalho de Haskell

@@ -1,0 +1,57 @@
+<header>
+    <h1>
+        Lanchonete do Haskell
+    <ul>
+        <li>
+            <a href=@{HomeR}>
+                Sobre	
+        <li>
+            <a href="/cliente">
+                Faça seu Pedido
+        <li>
+            <a href="/lanches">
+                Lanches
+        <li>
+            <a href="/pizzas">
+                Pizza
+        <li>
+            <a href="/bebidas">
+                Bebidas	
+<body>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Nome
+                <th>
+                    E-mail
+                <th>
+                    Endereço
+                <th>
+                    N°
+                <th>
+                    Mensagem
+                <th>
+                
+        <tbody>
+            $forall Entity pid clie <- clientes
+                <tr>
+                   <td>
+                        <a href=@{PedidoR pid}>
+                            #{clienteNome clie}
+                    <td>
+                        #{clienteEmail clie}
+                    <td>
+                        #{clienteEndereco clie}	
+                    <td>
+                        #{clienteNumero clie}	
+                    <td>
+                        #{clienteMensagem clie}
+                    <td>
+                        <form method=post action=@{ApagarClieR pid}>
+                            <input type="submit" value="X">
+
+<footer>
+    <h2>
+        Trabalho de Haskell
