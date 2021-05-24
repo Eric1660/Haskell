@@ -7,7 +7,7 @@
 module Handler.Pizza where
 
 import Import
-import Text.Cassius
+import Text.Lucius
 
 formPizza :: Form Pizza
 formPizza = renderDivs $ Pizza
@@ -44,17 +44,20 @@ getPizzaR = do
     (widget,_) <- generateFormPost formPizza
     msg <- getMessage -- Handler (Maybe Text)
     defaultLayout $ do
-	
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/pizza.hamlet")
+	{-	
 		[whamlet|
             $maybe mensa <- msg
                 <h2>
                     ^{mensa}
     
-            <form action=@{PizzaR} method=post>
+            <form action=@{LancheR} method=post>
                 ^{widget}
                 <input type="submit" value="Cadastrar">
         |]
 		
+    -}
 
 postPizzaR :: Handler Html
 postPizzaR = do
@@ -88,4 +91,4 @@ getListaPizzaR = do
     pizzas <- runDB $ selectList [] [Asc PizzaNome] 
     defaultLayout $ do
 		$(whamletFile "templates/listarPizza.hamlet")
-		toWidgetHead $(cassiusFile "templates/home.cassius")
+		toWidgetHead $(luciusFile "templates/home.lucius")

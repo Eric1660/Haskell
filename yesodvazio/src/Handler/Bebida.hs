@@ -7,7 +7,7 @@
 module Handler.Bebida where
 
 import Import
-import Text.Cassius
+import Text.Lucius
 
 formBebida :: Form Bebida
 formBebida = renderDivs $ Bebida
@@ -37,18 +37,20 @@ getBebidaR = do
     (widget,_) <- generateFormPost formBebida
     msg <- getMessage -- Handler (Maybe Text)
     defaultLayout $ do
-	
+		toWidgetHead $(luciusFile "templates/home.lucius")
+		$(whamletFile "templates/bebida.hamlet")
+	{-	
 		[whamlet|
             $maybe mensa <- msg
                 <h2>
                     ^{mensa}
     
-            <form action=@{BebidaR} method=post>
+            <form action=@{LancheR} method=post>
                 ^{widget}
                 <input type="submit" value="Cadastrar">
         |]
 		
-
+    -}
 postBebidaR :: Handler Html
 postBebidaR = do
     ((result,_),_) <- runFormPost formBebida
@@ -79,4 +81,4 @@ getListaBebidaR = do
     bebidas <- runDB $ selectList [] [Asc BebidaNome] 
     defaultLayout $ do
 		$(whamletFile "templates/listarBebida.hamlet")
-		toWidgetHead $(cassiusFile "templates/home.cassius")
+		toWidgetHead $(luciusFile "templates/home.lucius")

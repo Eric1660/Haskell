@@ -3,21 +3,22 @@
         Lanchonete do Haskell
     <ul>
         <li>
-            <a href=@{HomeR}>
-                Sobre	
-        <li>
-            <a href="/cliente">
-                Faça seu Pedido
-        <li>
-            <a href="/lanches">
-                Lanches
+            <a href="/bebidas">
+                Bebidas
         <li>
             <a href="/pizzas">
                 Pizza
         <li>
-            <a href="/bebidas">
-                Bebidas	
+            <a href="/lanches">
+                Lanches
+        <li>
+            <a href="/cliente">
+                Faça seu Pedido
+        <li>
+            <a href=@{HomeR}>
+                Sobre
 <body>
+    <img class="icon" src=@{StaticR img_pizza_png}>
     <table>
         <thead>
             <tr>

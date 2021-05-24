@@ -7,7 +7,7 @@
 module Handler.Lanche where
 
 import Import
-import Text.Cassius
+import Text.Lucius
 
 
 formLanche :: Form Lanche
@@ -50,7 +50,9 @@ getLancheR = do
     (widget,_) <- generateFormPost formLanche
     msg <- getMessage
     defaultLayout $ do
-		
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/lanche.hamlet")
+	{-	
 		[whamlet|
             $maybe mensa <- msg
                 <h2>
@@ -61,8 +63,7 @@ getLancheR = do
                 <input type="submit" value="Cadastrar">
         |]
 		
-
-
+    -}
 postLancheR :: Handler Html
 postLancheR = do
     ((result,_),_) <- runFormPost formLanche
@@ -97,4 +98,4 @@ getListaLancheR = do
     lanches <- runDB $ selectList [] [Asc LancheNome] 
     defaultLayout $ do
 		$(whamletFile "templates/listarLanche.hamlet")
-		toWidgetHead $(cassiusFile "templates/home.cassius")
+		toWidgetHead $(luciusFile "templates/home.lucius")

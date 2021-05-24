@@ -7,7 +7,7 @@
 module Handler.Cliente where
 
 import Import
-import Text.Cassius
+import Text.Lucius
 
 formCliente :: Form Cliente
 formCliente = renderDivs $ Cliente
@@ -51,7 +51,7 @@ getClientR = do
     (widget,_) <- generateFormPost formCliente
     msg <- getMessage -- Handler (Maybe Text)
     defaultLayout $ do
-		toWidgetHead $(cassiusFile "templates/home.cassius")
+		toWidgetHead $(luciusFile "templates/home.lucius")
 		$(whamletFile "templates/client.hamlet")
 	{-
 		[whamlet|
@@ -105,4 +105,4 @@ getListaClieR = do
     clientes <- runDB $ selectList [] [Asc ClienteNome] 
     defaultLayout $ do
 		$(whamletFile "templates/listarCliente.hamlet")
-		toWidgetHead $(cassiusFile "templates/home.cassius")
+		toWidgetHead $(luciusFile "templates/home.lucius")

@@ -7,7 +7,7 @@
 module Handler.Home where
 
 import Import
-import Text.Cassius
+import Text.Lucius
 import Network.HTTP.Types.Status
 import Database.Persist.Postgresql
 
@@ -15,4 +15,4 @@ getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
 		$(whamletFile "templates/home.hamlet")
-		toWidgetHead $(cassiusFile "templates/home.cassius")
+		toWidgetHead $(luciusFile "templates/home.lucius")

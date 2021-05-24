@@ -8,7 +8,7 @@ Cliente
 	
 Lanche
     nome  Text
-	pao   Text
+    pao   Text
     carne Text
     preco Double
     descr Textarea

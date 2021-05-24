@@ -19,18 +19,15 @@
                 Sobre
 <body>
     <h2>
-        Faça aqui seu Pedido
+        Cadastro de nova Bebida.
 
     $maybe mensa <- msg
         <h2>
             ^{mensa}
 
-    <form action=@{ClientR} method=post>
+    <form action=@{BebidaR} method=post>
         ^{widget}
         <input type="submit" value="Enviar">
-
-    <h3>
-        Delivery via Ifood e Uber Eats
 <footer>
     <h2>
         Trabalho de Haskell
