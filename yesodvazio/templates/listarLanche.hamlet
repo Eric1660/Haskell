@@ -18,7 +18,8 @@
             <a href=@{HomeR}>
                 Sobre
 <body>
-    <img class="icon" src=@{StaticR img_sanduba_png}>
+    <a href="/lanche">       
+        <img class="icon" src=@{StaticR img_sanduba_png}>
     <table class="box">
         <thead>
             <tr>
