@@ -7,7 +7,7 @@
                 Bebidas
         <li>
             <a href="/pizzas">
-                Pizza
+                Pizzas
         <li>
             <a href="/lanches">
                 Lanches
@@ -18,19 +18,19 @@
             <a href=@{HomeR}>
                 Sobre
 <body>
-    <h2>
+    <h2 class="box">
         Faça aqui seu Pedido
 
     $maybe mensa <- msg
-        <h2>
+        <h3 class="box">
             ^{mensa}
 
-    <form action=@{ClientR} method=post>
+    < class="box" form action=@{ClientR} method=post>
         ^{widget}
-        <input type="submit" value="Enviar">
+        <input class="button" type="submit" value="Enviar">
 
     <h3>
         Delivery via Ifood e Uber Eats
-<footer>
+<footer class="rodape">
     <h2>
         Trabalho de Haskell

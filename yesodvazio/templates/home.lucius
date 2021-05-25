@@ -15,12 +15,10 @@ header {
 footer {
     background-color: white;
     color: #009743;
-	height: 100px;
+	height: 50px;
 	width: 100%;
 	bottom: 0;
-	position: fixed;
-	margin-top: 3%;
-	padding: 2%;
+	position: static;
 	text-align: center;
 }
 	
@@ -59,9 +57,62 @@ h1 {
     margin-left: 5%;
 }
 
+table {
+    border-collapse: collapse;
+    width: 80%;
+	text-align: center;
+}
+
+table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: #009743;
+}
+
+table td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table td a {
+    color: white;
+	text-decoration: none;
+}
+
 .icon {
     max-height: 256px;
 	max-width: 256px;
+}
+
+.button {
+    background-color: #ffcb0a;
+    border: none;
+    color: #009743;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.box {
+    margin-left: auto;
+    margin-right: auto;
+	margin-bottom: 2%;
+	margin-top: 2%;
+	text-align: center;
+}
+
+.rodape {
+    background-color: white;
+    color: #009743;
+	height: 50px;
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	text-align: center;
 }
 
 

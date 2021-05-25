@@ -7,7 +7,7 @@
                 Bebidas
         <li>
             <a href="/pizzas">
-                Pizza
+                Pizzas
         <li>
             <a href="/lanches">
                 Lanches
@@ -18,7 +18,9 @@
             <a href=@{HomeR}>
                 Sobre
 <body>
-    <table>
+    <h2 class="box">
+        Lista de Pedidos
+    <table class="box">
         <thead>
             <tr>
                 <th>
@@ -49,8 +51,8 @@
                         #{clienteMensagem clie}
                     <td>
                         <form method=post action=@{ApagarClieR pid}>
-                            <input type="submit" value="X">
+                            <input type="submit" value="Apagar">
 
-<footer>
+<footer class="rodape">
     <h2>
         Trabalho de Haskell

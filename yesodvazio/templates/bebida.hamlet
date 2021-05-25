@@ -7,7 +7,7 @@
                 Bebidas
         <li>
             <a href="/pizzas">
-                Pizza
+                Pizzas
         <li>
             <a href="/lanches">
                 Lanches
@@ -18,16 +18,16 @@
             <a href=@{HomeR}>
                 Sobre
 <body>
-    <h2>
+    <h2 class="box">
         Cadastro de nova Bebida.
 
     $maybe mensa <- msg
-        <h2>
+        <h3 class="box">
             ^{mensa}
 
-    <form action=@{BebidaR} method=post>
+    <form class="box" action=@{BebidaR} method=post>
         ^{widget}
-        <input type="submit" value="Enviar">
-<footer>
+        <input class="button" type="submit" value="Cadastrar">
+<footer class="rodape">
     <h2>
         Trabalho de Haskell

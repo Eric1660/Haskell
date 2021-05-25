@@ -7,7 +7,7 @@
                 Bebidas
         <li>
             <a href="/pizzas">
-                Pizza
+                Pizzas
         <li>
             <a href="/lanches">
                 Lanches
@@ -18,11 +18,14 @@
             <a href=@{HomeR}>
                 Sobre
 <body>
-    <h1>
+    <h2 class="box">
         A Melhor Lanchonete da Região!!!
-    <div>
+    <div class="box">
         <img src=@{StaticR img_sanduba2_jpg}>
         <img src=@{StaticR img_pizza2_jpg}>
+    <div class="box">
+        <img src=@{StaticR img_sanduba3_jpg}>
+        <img src=@{StaticR img_pizza3_jpg}>
 <footer>
     <h2>
         Trabalho de Haskell

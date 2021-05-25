@@ -7,7 +7,7 @@
                 Bebidas
         <li>
             <a href="/pizzas">
-                Pizza
+                Pizzas
         <li>
             <a href="/lanches">
                 Lanches
@@ -19,7 +19,7 @@
                 Sobre
 <body>
     <img class="icon" src=@{StaticR img_drink_png}>
-    <table>
+    <table class="box">
         <thead>
             <tr>
                 <th>
@@ -27,7 +27,7 @@
                 <th>
                     PREÇO
                 <th>
-                    DESCRIÇAO
+                    DESCRIÇÃO
                 <th>
                 
         <tbody>
@@ -41,6 +41,6 @@
                     <td>
                         #{bebidaDesc bebe}
                     <td>
-<footer>
+<footer class="rodape">
     <h2>
         Trabalho de Haskell
