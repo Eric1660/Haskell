@@ -25,12 +25,16 @@
         <h3 class="box">
             ^{mensa}
 
-    < class="box" form action=@{ClientR} method=post>
+    <form action=@{ClientR} method=post>
         ^{widget}
         <input class="button" type="submit" value="Enviar">
-
+    <br>
     <h3>
         Delivery via Ifood e Uber Eats
+    <br>
+    <a href="/clientes">   
+        <img class="icon" src=@{StaticR img_delivery_png}>
 <footer class="rodape">
+    <br>
     <h2>
         Trabalho de Haskell

@@ -43,5 +43,6 @@
                         #{bebidaDesc bebe}
                     <td>
 <footer class="rodape">
+    <br>
     <h2>
         Trabalho de Haskell

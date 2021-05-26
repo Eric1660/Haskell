@@ -108,7 +108,7 @@ table td a {
 .rodape {
     background-color: white;
     color: #009743;
-	height: 50px;
+	height: 100px;
 	width: 100%;
 	bottom: 0;
 	position: absolute;

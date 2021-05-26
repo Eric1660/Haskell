@@ -29,5 +29,6 @@
         ^{widget}
         <input class="button" type="submit" value="Cadastrar">
 <footer class="rodape">
+    <br>
     <h2>
         Trabalho de Haskell

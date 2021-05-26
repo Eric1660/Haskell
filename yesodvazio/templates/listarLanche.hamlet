@@ -51,5 +51,6 @@
                         #{lancheDescr burger}
                     <td>
 <footer class="rodape">
+    <br>
     <h2>
         Trabalho de Haskell

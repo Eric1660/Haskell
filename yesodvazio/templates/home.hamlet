@@ -27,5 +27,6 @@
         <img src=@{StaticR img_sanduba3_jpg}>
         <img src=@{StaticR img_pizza3_jpg}>
 <footer>
+    <br>
     <h2>
         Trabalho de Haskell
