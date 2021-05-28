@@ -48,6 +48,14 @@ li a {
     text-decoration: none;
 }
 
+li form {
+    display: block;
+    color: #009743;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 li a:hover {
     background-color: #ffcb0a;
 }
@@ -78,6 +86,10 @@ table td {
 table td a {
     color: white;
 	text-decoration: none;
+}
+
+.required {
+    margin-top: 1%;
 }
 
 .icon {

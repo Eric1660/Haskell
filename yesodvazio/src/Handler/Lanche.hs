@@ -8,48 +8,22 @@ module Handler.Lanche where
 
 import Import
 import Text.Lucius
+import Handler.Auxiliar
 
-
-formLanche :: Form Lanche
-formLanche = renderDivs $ Lanche
-    <$> areq textField (FieldSettings "" 
-                                      (Just "Nome do produto:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                       ) Nothing
-    <*> areq textField (FieldSettings "" 
-                                      (Just "Pão:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                       ) Nothing
-    <*> areq textField (FieldSettings "" 
-                                      (Just "Carne:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                       ) Nothing
-					   
-    <*> areq doubleField (FieldSettings "" 
-                                      (Just "Preço:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                       ) Nothing
-					   
-    <*> areq textareaField (FieldSettings "" 
-                                      (Just "Descrição:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                       ) Nothing
+formLanche :: Maybe Lanche -> Form Lanche
+formLanche mc = renderDivs $ Lanche
+    <$> areq textField "Nome: "          (fmap lancheNome mc)
+    <*> areq textField "Pão: "           (fmap lanchePao mc)
+    <*> areq textField "Carne: "         (fmap lancheCarne mc)
+    <*> areq doubleField "Preço(R$): "   (fmap lanchePreco mc) 			
+    <*> areq textareaField "Descrição: " (fmap lancheDescr mc)
 
 getLancheR :: Handler Html
 getLancheR = do
-    (widget,_) <- generateFormPost formLanche
+    (widget,_) <- generateFormPost (formLanche Nothing)
     msg <- getMessage
     defaultLayout $ do
+        usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/lanche.hamlet")
 	{-	
@@ -66,7 +40,7 @@ getLancheR = do
     -}
 postLancheR :: Handler Html
 postLancheR = do
-    ((result,_),_) <- runFormPost formLanche
+    ((result,_),_) <- runFormPost (formLanche Nothing)
     case result of
          FormSuccess lanche -> do
              runDB $ insert lanche
@@ -97,5 +71,24 @@ getListaLancheR :: Handler Html
 getListaLancheR = do
     lanches <- runDB $ selectList [] [Asc LancheNome] 
     defaultLayout $ do
-		$(whamletFile "templates/listarLanche.hamlet")
-		toWidgetHead $(luciusFile "templates/home.lucius")
+        usuario <- lookupSession "_ID"
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/listarLanche.hamlet")
+		
+getEditarLancheR :: LancheId -> Handler Html
+getEditarLancheR pid = do 
+    lanche <- runDB $ get404 pid
+    (widget,_) <- generateFormPost (formLanche (Just lanche))
+    msg <- getMessage
+    defaultLayout (formWidget widget msg (EditarLancheR pid) "Editar")
+        
+
+postEditarLancheR :: LancheId -> Handler Html
+postEditarLancheR pid = do
+    _ <- runDB $ get404 pid 
+    ((result,_),_) <- runFormPost (formLanche Nothing)
+    case result of 
+         FormSuccess novoLanche -> do
+             runDB $ replace pid novoLanche
+             redirect ListaLancheR
+         _ -> redirect HomeR

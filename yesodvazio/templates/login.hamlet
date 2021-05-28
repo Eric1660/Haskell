@@ -6,6 +6,10 @@
             <li>
                 <form action=@{SairR} method=post>
                      #{email}: <input type="submit" value="Sair"> 
+        $nothing
+            <li>
+                <a href=@{AutR}>
+                    Entrar
         <li>
             <a href="/bebidas">
                 Bebidas
@@ -23,15 +27,18 @@
                 Sobre
 <body>
     <h2 class="box">
-        Cadastro de nova Pizza.
+        Por favor faça login ou Cadastre
 
     $maybe mensa <- msg
         <h3 class="box">
             ^{mensa}
 
-    <form action=@{PizzaR} method=post>
+    <form action=@{AutR} method=post>
         ^{widget}
-        <input class="button" type="submit" value="Cadastrar">
+        <input class="button" type="submit" value="Logar">
+    <a href=@{UsuarioR}>	
+        <input class="button" type="submit" value="Não tem Cadastro?">
+    <br>
 <footer class="rodape">
     <br>
     <h2>

@@ -14,5 +14,6 @@ import Database.Persist.Postgresql
 getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
-		$(whamletFile "templates/home.hamlet")
-		toWidgetHead $(luciusFile "templates/home.lucius")
+        usuario <- lookupSession "_ID"
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/home.hamlet")

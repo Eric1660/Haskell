@@ -8,42 +8,20 @@ module Handler.Pizza where
 
 import Import
 import Text.Lucius
+import Handler.Auxiliar
 
-formPizza :: Form Pizza
-formPizza = renderDivs $ Pizza
-    <$>areq textField (FieldSettings ""
-                                   (Just "Nome")
-                                   (Just "n1")
-                                   Nothing
-                                   [("class","formNome")]
-                      ) Nothing
-	
-	<*>areq textField  (FieldSettings ""
-                                    (Just "Borda")
-                                    (Just "n1")
-                                    Nothing
-                                    [("class","formNome")]
-                        ) Nothing
-	
-    <*> areq doubleField (FieldSettings "" 
-                                      (Just "Preço:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                        ) Nothing
-					   
-    <*> areq textareaField (FieldSettings "" 
-                                      (Just "Descrição:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                       ) Nothing
-
+formPizza :: Maybe Pizza -> Form Pizza
+formPizza mc = renderDivs $ Pizza
+    <$>areq textField "Nome: "           (fmap pizzaNome mc)
+	<*>areq textField "Borda: "          (fmap pizzaBorda mc)
+    <*> areq doubleField "Preço(R$): "   (fmap pizzaPreco mc)		   
+    <*> areq textareaField "Descrição: " (fmap pizzaDesc mc)
 getPizzaR :: Handler Html
 getPizzaR = do
-    (widget,_) <- generateFormPost formPizza
+    (widget,_) <- generateFormPost (formPizza Nothing)
     msg <- getMessage -- Handler (Maybe Text)
     defaultLayout $ do
+        usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/pizza.hamlet")
 	{-	
@@ -61,7 +39,7 @@ getPizzaR = do
 
 postPizzaR :: Handler Html
 postPizzaR = do
-    ((result,_),_) <- runFormPost formPizza
+    ((result,_),_) <- runFormPost (formPizza Nothing)
     case result of
          FormSuccess pizza -> do
              runDB $ insert pizza
@@ -90,5 +68,24 @@ getListaPizzaR :: Handler Html
 getListaPizzaR = do
     pizzas <- runDB $ selectList [] [Asc PizzaNome] 
     defaultLayout $ do
-		$(whamletFile "templates/listarPizza.hamlet")
-		toWidgetHead $(luciusFile "templates/home.lucius")
+        usuario <- lookupSession "_ID"
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/listarPizza.hamlet")
+
+getEditarPizzaR :: PizzaId -> Handler Html
+getEditarPizzaR pid = do 
+    pizza <- runDB $ get404 pid
+    (widget,_) <- generateFormPost (formPizza (Just pizza))
+    msg <- getMessage
+    defaultLayout (formWidget widget msg (EditarPizzaR pid) "Editar")
+        
+
+postEditarPizzaR :: PizzaId -> Handler Html
+postEditarPizzaR pid = do
+    _ <- runDB $ get404 pid 
+    ((result,_),_) <- runFormPost (formPizza Nothing)
+    case result of 
+         FormSuccess novoPizza -> do
+             runDB $ replace pid novoPizza
+             redirect ListaPizzaR
+         _ -> redirect HomeR

@@ -7,6 +7,7 @@
 module Handler.Cliente where
 
 import Import
+import Handler.Auxiliar
 import Text.Lucius
 
 formCliente :: Form Cliente
@@ -17,13 +18,12 @@ formCliente = renderDivs $ Cliente
                                    Nothing
                                    [("class","formNome")]
                       ) Nothing
-	
-	<*>areq emailField (FieldSettings ""
-                                    (Just "E-mail")
-                                    (Just "n1")
-                                    Nothing
-                                    [("class","formNome")]
-                        ) Nothing
+    <*>areq textField (FieldSettings ""
+                                   (Just "E-mail")
+                                   (Just "n1")
+                                   Nothing
+                                   [("class","formNome")]
+                      ) Nothing
 	
 	<*>areq textField (FieldSettings ""
                                     (Just "Endereço")
@@ -51,8 +51,9 @@ getClientR = do
     (widget,_) <- generateFormPost formCliente
     msg <- getMessage -- Handler (Maybe Text)
     defaultLayout $ do
-		toWidgetHead $(luciusFile "templates/home.lucius")
-		$(whamletFile "templates/client.hamlet")
+        usuario <- lookupSession "_ID"
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/client.hamlet")
 	{-
 		[whamlet|
             $maybe mensa <- msg
@@ -90,9 +91,9 @@ getPedidoR pid = do
         <h2>
             Endereço: #{clienteEndereco cliente}
         <h2>
-            n°: #{clienteNumero cliente}
+            N°: #{clienteNumero cliente}
         <h2>
-            Mensagem: #{clienteMensagem cliente}
+            Pedido: #{clienteMensagem cliente}
    |]
 
 postApagarClieR :: ClienteId -> Handler Html
@@ -104,5 +105,6 @@ getListaClieR :: Handler Html
 getListaClieR = do
     clientes <- runDB $ selectList [] [Asc ClienteNome] 
     defaultLayout $ do
-		$(whamletFile "templates/listarCliente.hamlet")
-		toWidgetHead $(luciusFile "templates/home.lucius")
+        usuario <- lookupSession "_ID"
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/listarCliente.hamlet")

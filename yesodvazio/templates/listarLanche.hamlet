@@ -2,6 +2,10 @@
     <h1>
         Lanchonete do Haskell
     <ul>
+        $maybe email <- usuario            
+            <li>
+                <form action=@{SairR} method=post>
+                     #{email}: <input type="submit" value="Sair"> 
         <li>
             <a href="/bebidas">
                 Bebidas
@@ -17,7 +21,7 @@
         <li>
             <a href=@{HomeR}>
                 Sobre
-<body>
+<body>				
     <a href="/lanche">       
         <img class="icon" src=@{StaticR img_sanduba_png}>
     <table class="box">
@@ -30,7 +34,7 @@
                 <th>
                     CARNE
                 <th>
-                    PREÇO
+                    PREÇO(R$)
                 <th>
                     DESCRIÇÃO
                 <th>
@@ -39,8 +43,7 @@
             $forall Entity pid burger <- lanches
                <tr>
                     <td>
-                        <a href=@{SandwichR pid}>
-                            #{lancheNome burger}
+                        #{lancheNome burger}
                     <td>
                         #{lanchePao burger}
                     <td>
@@ -50,6 +53,8 @@
                     <td>
                         #{lancheDescr burger}
                     <td>
+                        <a href=@{EditarLancheR pid}>
+                            Editar
 <footer class="rodape">
     <br>
     <h2>

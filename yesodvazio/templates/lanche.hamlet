@@ -2,6 +2,10 @@
     <h1>
         Lanchonete do Haskell
     <ul>
+        $maybe email <- usuario            
+            <li>
+                <form action=@{SairR} method=post>
+                     #{email}: <input type="submit" value="Sair"> 
         <li>
             <a href="/bebidas">
                 Bebidas

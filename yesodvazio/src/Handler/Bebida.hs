@@ -8,37 +8,22 @@ module Handler.Bebida where
 
 import Import
 import Text.Lucius
+import Handler.Auxiliar
 
-formBebida :: Form Bebida
-formBebida = renderDivs $ Bebida
-    <$>areq textField (FieldSettings ""
-                                   (Just "Nome")
-                                   (Just "n1")
-                                   Nothing
-                                   [("class","formNome")]
-                      ) Nothing
-	
-    <*> areq doubleField (FieldSettings "" 
-                                      (Just "Preço:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                        ) Nothing
-					   
-    <*> areq textareaField (FieldSettings "" 
-                                      (Just "Descrição:") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formNome")]
-                       ) Nothing
+formBebida :: Maybe Bebida -> Form Bebida
+formBebida mc = renderDivs $ Bebida
+    <$>areq textField "Nome: "           (fmap bebidaNome mc)
+    <*> areq doubleField "Preço(R$): "   (fmap bebidaPreco mc)			   
+    <*> areq textareaField "Descrição: " (fmap bebidaDesc mc)
 
 getBebidaR :: Handler Html
 getBebidaR = do
-    (widget,_) <- generateFormPost formBebida
+    (widget,_) <- generateFormPost (formBebida Nothing)
     msg <- getMessage -- Handler (Maybe Text)
     defaultLayout $ do
-		toWidgetHead $(luciusFile "templates/home.lucius")
-		$(whamletFile "templates/bebida.hamlet")
+        usuario <- lookupSession "_ID"
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/bebida.hamlet")
 	{-	
 		[whamlet|
             $maybe mensa <- msg
@@ -53,7 +38,7 @@ getBebidaR = do
     -}
 postBebidaR :: Handler Html
 postBebidaR = do
-    ((result,_),_) <- runFormPost formBebida
+    ((result,_),_) <- runFormPost (formBebida Nothing)
     case result of
          FormSuccess bebida -> do
              runDB $ insert bebida
@@ -80,5 +65,25 @@ getListaBebidaR :: Handler Html
 getListaBebidaR = do
     bebidas <- runDB $ selectList [] [Asc BebidaNome] 
     defaultLayout $ do
-		$(whamletFile "templates/listarBebida.hamlet")
-		toWidgetHead $(luciusFile "templates/home.lucius")
+        usuario <- lookupSession "_ID"
+        toWidgetHead $(luciusFile "templates/home.lucius")
+        $(whamletFile "templates/listarBebida.hamlet")
+		
+getEditarBebidaR :: BebidaId -> Handler Html
+getEditarBebidaR pid = do 
+    bebida <- runDB $ get404 pid
+    (widget,_) <- generateFormPost (formBebida (Just bebida))
+    msg <- getMessage
+    defaultLayout (formWidget widget msg (EditarBebidaR pid) "Editar")
+        
+
+postEditarBebidaR :: BebidaId -> Handler Html
+postEditarBebidaR pid = do
+    _ <- runDB $ get404 pid 
+    ((result,_),_) <- runFormPost (formBebida Nothing)
+    case result of 
+         FormSuccess novoBebida -> do
+             runDB $ replace pid novoBebida
+             redirect ListaBebidaR
+         _ -> redirect HomeR
+		 

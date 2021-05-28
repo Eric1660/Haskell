@@ -23,15 +23,16 @@
                 Sobre
 <body>
     <h2 class="box">
-        Cadastro de nova Pizza.
+        Cadastro
 
     $maybe mensa <- msg
         <h3 class="box">
             ^{mensa}
 
-    <form action=@{PizzaR} method=post>
+    <form action=@{UsuarioR} method=post>
         ^{widget}
         <input class="button" type="submit" value="Cadastrar">
+    <br>
 <footer class="rodape">
     <br>
     <h2>

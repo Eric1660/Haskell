@@ -25,3 +25,10 @@ Bebida
     nome  Text
 	preco Double
 	desc  Textarea
+	deriving Show
+	
+Usuario
+    email Text
+    senha Text
+    UniqueEmail email
+    deriving Show
