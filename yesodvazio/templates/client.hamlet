@@ -2,10 +2,6 @@
     <h1>
         Lanchonete do Haskell
     <ul>
-        $maybe email <- usuario            
-            <li>
-                <form action=@{SairR} method=post>
-                     #{email}: <input type="submit" value="Sair"> 
         <li>
             <a href="/bebidas">
                 Bebidas
@@ -20,7 +16,12 @@
                 Faça seu Pedido
         <li>
             <a href=@{HomeR}>
-                Sobre
+                Sobre            
+    $maybe email <- usuario
+        <ul>
+            <li>
+                <form action=@{SairR} method=post>
+                    #{email}: <input type="submit" value="Sair">
 <body>
     <h2 class="box">
         Faça aqui seu Pedido
@@ -36,8 +37,8 @@
     <h3>
         Delivery via Ifood e Uber Eats
     <br>
-    <a href="/clientes">
-        <img class="icon" src=@{StaticR img_delivery_png}>
+    <a href=@{ListaClieR}>	
+        <input class="button" type="submit" value="Lista de Pedidos">
 <footer class="rodape">
     <br>
     <h2>

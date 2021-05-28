@@ -13,13 +13,8 @@ import Handler.Auxiliar
 formLogin :: Form (Usuario, Text)
 formLogin = renderBootstrap $ (,) 
         <$> (Usuario 
-            <$> areq textField (FieldSettings "E-mail" 
-                                      (Just "E-mail do usuario") 
-                                      (Just "n1")
-                                      Nothing
-                                      [("class","formEmail myClass")]
-                               )  Nothing
-            <*> areq passwordField "Senha:  "  Nothing
+            <$> areq textField "E-mail: " Nothing
+            <*> areq passwordField "Senha:  " Nothing
             )
         <*> areq passwordField  "Confirmação: " Nothing
     

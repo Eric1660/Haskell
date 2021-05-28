@@ -106,7 +106,9 @@ table td a {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 6px 3px;
+	border-radius: 12px;
+	
 }
 
 .box {
