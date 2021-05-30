@@ -63,8 +63,9 @@ li a:hover {
     background-color: #ffcb0a;
 }
 	
-h1 {
+h1, label {
     float: left;
+	font-weight: 700;
     margin-left: 5%;
 }
 
