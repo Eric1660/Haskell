@@ -21,7 +21,7 @@
         <ul>
             <li>
                 <form action=@{SairR} method=post>
-                    #{email}: <input type="submit" value="Sair">
+                    #{email}: <input class="btn" type="submit" value="Sair">
 <body>
     <h2>
         Clique na pizza para adicionar.
@@ -52,7 +52,7 @@
                     <td>
                         #{pizzaDesc piz}
                     <td>
-                        <a href=@{EditarPizzaR pid}>
+                        <a class="btn2" href=@{EditarPizzaR pid}>
                             Editar
 <footer class="rodape">
     <br>

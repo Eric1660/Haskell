@@ -21,7 +21,7 @@
         <ul>
             <li>
                 <form action=@{SairR} method=post>
-                    #{email}: <input type="submit" value="Sair">
+                    #{email}: <input class="btn" type="submit" value="Sair">
 <body>
     <h2>
         Clique na copo para adicionar.
@@ -48,7 +48,7 @@
                     <td>
                         #{bebidaDesc bebe}
                     <td>
-                        <a href=@{EditarBebidaR pid}>
+                        <a class="btn2" href=@{EditarBebidaR pid}>
                             Editar
 <footer class="rodape">
     <br>

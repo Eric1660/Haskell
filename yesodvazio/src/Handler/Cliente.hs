@@ -12,40 +12,11 @@ import Text.Lucius
 
 formCliente :: Form Cliente
 formCliente = renderDivs $ Cliente
-    <$>areq textField (FieldSettings ""
-                                   (Just "Nome")
-                                   (Just "n1")
-                                   Nothing
-                                   [("class","formNome")]
-                      ) Nothing
-    <*>areq textField (FieldSettings ""
-                                   (Just "E-mail")
-                                   (Just "n1")
-                                   Nothing
-                                   [("class","formNome")]
-                      ) Nothing
-	
-	<*>areq textField (FieldSettings ""
-                                    (Just "Endereço")
-                                    (Just "n1")
-                                    Nothing
-                                    [("class","formNome")]
-                        ) Nothing
-						
-    <*>areq intField (FieldSettings ""
-                                    (Just "N°")
-                                    (Just "n1")
-                                    Nothing
-                                    [("class","formNome")]
-                        ) Nothing							
-	
-	<*>areq textareaField (FieldSettings ""
-                                    (Just "Pedido")
-                                    (Just "n1")
-                                    Nothing
-                                    [("class","formNome")]
-                        ) Nothing
-
+    <$>areq textField "Nome: " Nothing
+    <*>areq textField "E-mail: " Nothing
+	<*>areq textField "Endereço: " Nothing
+    <*>areq intField "N°: " Nothing		 			
+	<*>areq textareaField "Pedido: " Nothing
 getClientR :: Handler Html
 getClientR = do
     (widget,_) <- generateFormPost formCliente

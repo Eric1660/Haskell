@@ -21,7 +21,7 @@
         <ul>
             <li>
                 <form action=@{SairR} method=post>
-                    #{email}: <input type="submit" value="Sair">
+                    #{email}: <input class="btn" type="submit" value="Sair">
 <body>
     <h2>
         Clique no lanche para adicionar.				
@@ -56,7 +56,7 @@
                     <td>
                         #{lancheDescr burger}
                     <td>
-                        <a href=@{EditarLancheR pid}>
+                        <a class="btn2" href=@{EditarLancheR pid}>
                             Editar
 <footer class="rodape">
     <br>

@@ -21,7 +21,7 @@
         <ul>
             <li>
                 <form action=@{SairR} method=post>
-                    #{email}: <input type="submit" value="Sair">
+                    #{email}: <input class="btn" type="submit" value="Sair">
 <body>
     <h2 class="box">
         Lista de Pedidos
@@ -55,7 +55,7 @@
                         #{clienteMensagem clie}
                     <td>
                         <form method=post action=@{ApagarClieR pid}>
-                            <input type="submit" value="Apagar">
+                            <input class="btn2" type="submit" value="Apagar">
 
 <footer class="rodape">
     <br>

@@ -21,7 +21,7 @@
         <ul>
             <li>
                 <form action=@{SairR} method=post>
-                    #{email}: <input type="submit" value="Sair">
+                    #{email}: <input class="btn" type="submit" value="Sair">
 <body>
     <h2 class="box">
         Cadastro de nova Pizza.
@@ -29,7 +29,6 @@
     $maybe mensa <- msg
         <h3 class="box">
             ^{mensa}
-
     <form action=@{PizzaR} method=post>
         ^{widget}
         <input class="button" type="submit" value="Cadastrar">

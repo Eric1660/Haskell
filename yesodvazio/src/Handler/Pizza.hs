@@ -14,7 +14,7 @@ formPizza :: Maybe Pizza -> Form Pizza
 formPizza mc = renderDivs $ Pizza
     <$>areq textField "Nome: "           (fmap pizzaNome mc)
 	<*>areq textField "Borda: "          (fmap pizzaBorda mc)
-    <*> areq doubleField "Preço(R$): "   (fmap pizzaPreco mc)		   
+    <*> areq doubleField "Preço(R$): "   (fmap pizzaPreco mc)  
     <*> areq textareaField "Descrição: " (fmap pizzaDesc mc)
 getPizzaR :: Handler Html
 getPizzaR = do

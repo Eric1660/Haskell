@@ -12,8 +12,8 @@ import Handler.Auxiliar
 
 formBebida :: Maybe Bebida -> Form Bebida
 formBebida mc = renderDivs $ Bebida
-    <$>areq textField "Nome: "           (fmap bebidaNome mc)
-    <*> areq doubleField "Preço(R$): "   (fmap bebidaPreco mc)			   
+    <$> areq textField "Nome: "          (fmap bebidaNome mc)
+    <*> areq doubleField "Preço(R$): "   (fmap bebidaPreco mc)
     <*> areq textareaField "Descrição: " (fmap bebidaDesc mc)
 
 getBebidaR :: Handler Html

@@ -15,7 +15,7 @@ formLanche mc = renderDivs $ Lanche
     <$> areq textField "Nome: "          (fmap lancheNome mc)
     <*> areq textField "Pão: "           (fmap lanchePao mc)
     <*> areq textField "Carne: "         (fmap lancheCarne mc)
-    <*> areq doubleField "Preço(R$): "   (fmap lanchePreco mc) 			
+    <*> areq doubleField "Preço(R$): "   (fmap lanchePreco mc)	
     <*> areq textareaField "Descrição: " (fmap lancheDescr mc)
 
 getLancheR :: Handler Html

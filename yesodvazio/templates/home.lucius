@@ -1,6 +1,8 @@
 * {
    margin: 0;
    padding: 0;
+   margin: auto;
+   box-sizing: border-box;
 }
 
 header {
@@ -26,6 +28,7 @@ body {
     background-color: #009743;
     color: white;
 	text-align: center;
+	width: 95%;
 }
             
 ul {
@@ -100,15 +103,15 @@ table td a {
 .button {
     background-color: #ffcb0a;
     border: none;
+	border-radius: 4px;
     color: #009743;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+	display: inline-block;
     font-size: 16px;
     margin: 6px 3px;
-	border-radius: 12px;
-	
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+	width: 200px;
 }
 
 .box {
@@ -123,17 +126,57 @@ table td a {
     background-color: white;
     color: #009743;
 	height: 100px;
-	width: 100%;
+	width: 95%;
 	bottom: 0;
 	position: absolute;
 	text-align: center;
 }
 
+.btn {
+    background-color: white;
+	color: #009743;
+	font-weight: 700;
+	border: none;
+	margin: 0;
+	padding: 6px 12px;
+	text-align: center;
+}
 
+.btn:hover {
+    background-color: #ffcb0a;
+}
 
+.btn2 {
+    background-color: #009743;
+	color: white;
+	font-weight: 700;
+	border: none;
+	text-align: center;
+}
 
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
 
+input[type=number]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
 
+input[type=password]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
 
 
 
