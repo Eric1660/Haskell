@@ -92,6 +92,30 @@ table td a {
 	text-decoration: none;
 }
 
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=number]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=password]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
+
 .required {
     margin-top: 1%;
 }
@@ -154,30 +178,5 @@ table td a {
 	border: none;
 	text-align: center;
 }
-
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ffcb0a;
-    border-radius: 4px;
-    resize: vertical;
-}
-
-input[type=number]{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ffcb0a;
-    border-radius: 4px;
-    resize: vertical;
-}
-
-input[type=password]{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ffcb0a;
-    border-radius: 4px;
-    resize: vertical;
-}
-
 
 

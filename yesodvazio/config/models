@@ -1,6 +1,5 @@
 Cliente
     nome Text
-	email Text
 	endereco Text
 	numero Int
 	mensagem Textarea

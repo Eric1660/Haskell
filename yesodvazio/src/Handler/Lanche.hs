@@ -15,7 +15,7 @@ formLanche mc = renderDivs $ Lanche
     <$> areq textField "Nome: "          (fmap lancheNome mc)
     <*> areq textField "Pão: "           (fmap lanchePao mc)
     <*> areq textField "Carne: "         (fmap lancheCarne mc)
-    <*> areq doubleField "Preço(R$): "   (fmap lanchePreco mc)	
+    <*> areq doubleField "Preço(R$): "   (fmap lanchePreco mc)
     <*> areq textareaField "Descrição: " (fmap lancheDescr mc)
 
 getLancheR :: Handler Html
@@ -26,18 +26,7 @@ getLancheR = do
         usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/lanche.hamlet")
-	{-	
-		[whamlet|
-            $maybe mensa <- msg
-                <h2>
-                    ^{mensa}
-    
-            <form action=@{LancheR} method=post>
-                ^{widget}
-                <input type="submit" value="Cadastrar">
-        |]
-		
-    -}
+
 postLancheR :: Handler Html
 postLancheR = do
     ((result,_),_) <- runFormPost (formLanche Nothing)
@@ -74,7 +63,7 @@ getListaLancheR = do
         usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/listarLanche.hamlet")
-		
+
 getEditarLancheR :: LancheId -> Handler Html
 getEditarLancheR pid = do 
     lanche <- runDB $ get404 pid

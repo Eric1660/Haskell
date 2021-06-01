@@ -31,8 +31,6 @@
                 <th>
                     Nome
                 <th>
-                    E-mail
-                <th>
                     Endereço
                 <th>
                     N°
@@ -45,8 +43,6 @@
                 <tr>
                     <td>
                         #{clienteNome clie}
-                    <td>
-                        #{clienteEmail clie}	
                     <td>
                         #{clienteEndereco clie}	
                     <td>

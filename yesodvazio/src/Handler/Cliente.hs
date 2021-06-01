@@ -7,36 +7,23 @@
 module Handler.Cliente where
 
 import Import
-import Handler.Auxiliar
 import Text.Lucius
 
 formCliente :: Form Cliente
 formCliente = renderDivs $ Cliente
     <$>areq textField "Nome: " Nothing
-    <*>areq textField "E-mail: " Nothing
-	<*>areq textField "Endereço: " Nothing
-    <*>areq intField "N°: " Nothing		 			
-	<*>areq textareaField "Pedido: " Nothing
+    <*>areq textField "Endereço: " Nothing
+    <*>areq intField "N°: " Nothing
+    <*>areq textareaField "Pedido: " Nothing
+
 getClientR :: Handler Html
 getClientR = do
     (widget,_) <- generateFormPost formCliente
-    msg <- getMessage -- Handler (Maybe Text)
+    msg <- getMessage
     defaultLayout $ do
         usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/client.hamlet")
-	{-
-		[whamlet|
-            $maybe mensa <- msg
-                <h2>
-                    ^{mensa}
-    
-            <form action=@{ClientR} method=post>
-                ^{widget}
-                <input type="submit" value="Enviar">
-        |]
-	-}
-		
 
 postClientR :: Handler Html
 postClientR = do
@@ -50,15 +37,13 @@ postClientR = do
              |]
              redirect ClientR
          _ -> redirect HomeR
-		 
+
 getPedidoR :: ClienteId -> Handler Html
 getPedidoR pid = do
     cliente <- runDB $ get404 pid 
     defaultLayout [whamlet|
         <h2>
             Nome: #{clienteNome cliente}
-        <h2>
-            E-mail: #{clienteEmail cliente}
         <h2>
             Endereço: #{clienteEndereco cliente}
         <h2>

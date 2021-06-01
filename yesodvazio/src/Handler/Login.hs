@@ -7,7 +7,6 @@
 module Handler.Login where
 
 import Import
-import Handler.Auxiliar
 import Text.Lucius
 
 formLogin :: Form Usuario
@@ -25,7 +24,6 @@ getAutR = do
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/login.hamlet")
 
--- Bcrpyt
 postAutR :: Handler Html
 postAutR = do
     ((result,_),_) <- runFormPost formLogin
@@ -52,8 +50,6 @@ postAutR = do
                         redirect AutR
         _ -> redirect HomeR
     
--- Session => chave/valor
--- No nosso caso chave = _ID, valor = email
 postSairR :: Handler Html
 postSairR = do
     deleteSession "_ID"

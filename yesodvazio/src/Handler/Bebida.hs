@@ -24,18 +24,7 @@ getBebidaR = do
         usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/bebida.hamlet")
-	{-	
-		[whamlet|
-            $maybe mensa <- msg
-                <h2>
-                    ^{mensa}
-    
-            <form action=@{LancheR} method=post>
-                ^{widget}
-                <input type="submit" value="Cadastrar">
-        |]
-		
-    -}
+
 postBebidaR :: Handler Html
 postBebidaR = do
     ((result,_),_) <- runFormPost (formBebida Nothing)
@@ -48,7 +37,7 @@ postBebidaR = do
              |]
              redirect BebidaR
          _ -> redirect HomeR
-		 
+
 getDrinkR :: BebidaId -> Handler Html
 getDrinkR pid = do
     bebida <- runDB $ get404 pid 
@@ -68,7 +57,7 @@ getListaBebidaR = do
         usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/listarBebida.hamlet")
-		
+
 getEditarBebidaR :: BebidaId -> Handler Html
 getEditarBebidaR pid = do 
     bebida <- runDB $ get404 pid
@@ -86,4 +75,3 @@ postEditarBebidaR pid = do
              runDB $ replace pid novoBebida
              redirect ListaBebidaR
          _ -> redirect HomeR
-		 

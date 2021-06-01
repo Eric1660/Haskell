@@ -13,29 +13,18 @@ import Handler.Auxiliar
 formPizza :: Maybe Pizza -> Form Pizza
 formPizza mc = renderDivs $ Pizza
     <$>areq textField "Nome: "           (fmap pizzaNome mc)
-	<*>areq textField "Borda: "          (fmap pizzaBorda mc)
+    <*>areq textField "Borda: "          (fmap pizzaBorda mc)
     <*> areq doubleField "Preço(R$): "   (fmap pizzaPreco mc)  
     <*> areq textareaField "Descrição: " (fmap pizzaDesc mc)
+
 getPizzaR :: Handler Html
 getPizzaR = do
     (widget,_) <- generateFormPost (formPizza Nothing)
-    msg <- getMessage -- Handler (Maybe Text)
+    msg <- getMessage
     defaultLayout $ do
         usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/pizza.hamlet")
-	{-	
-		[whamlet|
-            $maybe mensa <- msg
-                <h2>
-                    ^{mensa}
-    
-            <form action=@{LancheR} method=post>
-                ^{widget}
-                <input type="submit" value="Cadastrar">
-        |]
-		
-    -}
 
 postPizzaR :: Handler Html
 postPizzaR = do
@@ -49,7 +38,7 @@ postPizzaR = do
              |]
              redirect PizzaR
          _ -> redirect HomeR
-		 
+
 getMamamiaR :: PizzaId -> Handler Html
 getMamamiaR pid = do
     pizza <- runDB $ get404 pid 

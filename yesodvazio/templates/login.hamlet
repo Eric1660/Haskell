@@ -33,8 +33,9 @@
     <form action=@{AutR} method=post>
         ^{widget}
         <input class="button" type="submit" value="Logar">
+    <br>
     <a href=@{UsuarioR}>	
-        <input class="button" type="submit" value="Não tem Cadastro?">
+        <input class="button" type="submit" value="Cadastrar">
     <br>
 <footer class="rodape">
     <br>

@@ -8,15 +8,14 @@ module Handler.Usuario where
 
 import Import
 import Text.Lucius
-import Handler.Auxiliar
 
 formLogin :: Form (Usuario, Text)
-formLogin = renderBootstrap $ (,) 
+formLogin = renderBootstrap $ (,)
         <$> (Usuario 
             <$> areq textField "E-mail: " Nothing
             <*> areq passwordField "Senha:  " Nothing
             )
-        <*> areq passwordField  "Confirmação: " Nothing
+        <*> areq passwordField  "Confirmação da Senha: " Nothing
     
 getUsuarioR :: Handler Html
 getUsuarioR = do
