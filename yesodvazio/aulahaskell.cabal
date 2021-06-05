@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e21d50aa9bcd1fa5559c311ae13321ba3ca80a05adb6991bb5b38d9d8e09cfd8
+-- hash: 654cbb87a7014da5265f5c089454489fbbd237aeeba6703a0b007bc4aca88b4a
 
 name:           aulahaskell
 version:        0.0.0
@@ -25,6 +25,7 @@ library
       Application
       Foundation
       Handler.Auxiliar
+      Handler.Bebes
       Handler.Bebida
       Handler.Common
       Handler.Home

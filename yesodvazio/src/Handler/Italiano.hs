@@ -56,11 +56,15 @@ getFornoR pid = do
     usuario <- runDB $ get404 pid
     tudo <- runDB $ rawSql sql [toPersistValue pid] :: Handler [(Entity Pizza,Entity Italiano,Entity Usuario)]
     defaultLayout $ do 
+        toWidgetHead $(luciusFile "templates/home.lucius")
         [whamlet|
-            <h1>
-                Carrinho de #{usuarioNome usuario}
-            <ul>
-                $forall (Entity _ pizza, Entity _ italiano, Entity _ _) <- tudo
-                    <li>
-                        #{pizzaNome pizza}, #{mult (pizzaPreco pizza)(fromIntegral (italianoQtpizza italiano))}
+            <body class="JOIN">
+                <h1 class="JOIN">
+                    Carrinho de #{usuarioNome usuario}
+                <ul class="JOIN">
+                    $forall (Entity _ pizza, Entity _ italiano, Entity _ _) <- tudo
+                        <li class="JOIN2">
+                            #{pizzaNome pizza}, #{mult (pizzaPreco pizza)(fromIntegral (italianoQtpizza italiano))}
+                <a href=@{HomeR}>	
+                    <input class="button" type="submit" value="Voltar">
         |]

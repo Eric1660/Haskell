@@ -22,6 +22,8 @@
 /pizza/editar/#PizzaId EditarPizzaR GET POST
 
 /bebida BebidaR GET POST
+/bebes/#UsuarioId BebesR GET POST
+/adaga/#UsuarioId AdagaR GET
 /drink/#BebidaId DrinkR GET
 /bebidas ListaBebidaR GET
 /bebida/#BebidaId ApagarBebidaR POST

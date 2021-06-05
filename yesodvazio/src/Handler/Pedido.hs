@@ -55,12 +55,16 @@ getCarrinhoR pid = do
           \ WHERE usuario.id = ?"
     usuario <- runDB $ get404 pid
     tudo <- runDB $ rawSql sql [toPersistValue pid] :: Handler [(Entity Lanche,Entity Pedido,Entity Usuario)]
-    defaultLayout $ do 
+    defaultLayout $ do
+        toWidgetHead $(luciusFile "templates/home.lucius")
         [whamlet|
-            <h1>
-                Carrinho de #{usuarioNome usuario}
-            <ul>
-                $forall (Entity _ lanche, Entity _ pedido, Entity _ _) <- tudo
-                    <li>
-                        #{lancheNome lanche}, #{mult (lanchePreco lanche)(fromIntegral (pedidoQtlanche pedido))}
+            <body class="JOIN">           
+                <h1 class="JOIN">
+                    Carrinho de #{usuarioNome usuario}
+                <ul class="JOIN">
+                    $forall (Entity _ lanche, Entity _ pedido, Entity _ _) <- tudo
+                        <li class="JOIN2">
+                            #{lancheNome lanche}, #{mult (lanchePreco lanche)(fromIntegral (pedidoQtlanche pedido))}
+                <a href=@{HomeR}>	
+                    <input class="button" type="submit" value="Voltar">
         |]

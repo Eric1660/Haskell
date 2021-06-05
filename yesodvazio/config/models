@@ -9,6 +9,12 @@ Italiano
    pizid     PizzaId
    qtpizza   Int
    deriving Show
+ 
+Bebes
+   userid    UsuarioId
+   bebid     BebidaId
+   qtbebida  Int
+   deriving Show
 	
 Lanche
     nome  Text

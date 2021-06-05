@@ -179,4 +179,19 @@ input[type=password]{
 	text-align: center;
 }
 
+.JOIN {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+	margin-bottom: 3%;
+	margin-top: 3%;
+}
+
+.JOIN2 {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
 
