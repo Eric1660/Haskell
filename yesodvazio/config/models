@@ -1,19 +1,22 @@
 Pedido
-    userid    UsuarioId
-    lanid     LancheId
-    qtlanche  Int
-    deriving Show
+   userid    UsuarioId
+   lanid     LancheId
+   qtlanche  Int
+   data       Day
+   deriving Show
 
 Italiano
    userid    UsuarioId
    pizid     PizzaId
    qtpizza   Int
+   dias       Day
    deriving Show
  
 Bebes
    userid    UsuarioId
    bebid     BebidaId
    qtbebida  Int
+   dia       Day
    deriving Show
 	
 Lanche

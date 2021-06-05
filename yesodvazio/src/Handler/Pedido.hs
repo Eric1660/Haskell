@@ -15,6 +15,7 @@ formPedido pid = renderDivs $ Pedido
     <$> pure pid
     <*> areq (selectField lancheCB) "Lanche: " Nothing
     <*> areq intField "Quantidade: " Nothing
+    <*> lift (liftIO (map utctDay getCurrentTime))
 
 lancheCB :: Handler (OptionList (Key Lanche))
 lancheCB = do
@@ -64,7 +65,7 @@ getCarrinhoR pid = do
                 <ul class="JOIN">
                     $forall (Entity _ lanche, Entity _ pedido, Entity _ _) <- tudo
                         <li class="JOIN2">
-                            #{lancheNome lanche}, #{mult (lanchePreco lanche)(fromIntegral (pedidoQtlanche pedido))}
+                            #{lancheNome lanche}, #{mult (lanchePreco lanche)(fromIntegral (pedidoQtlanche pedido))} no dia #{show $ pedidoData pedido}
                 <a href=@{HomeR}>	
                     <input class="button" type="submit" value="Voltar">
         |]

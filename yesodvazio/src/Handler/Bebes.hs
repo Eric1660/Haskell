@@ -15,6 +15,7 @@ formBebes pid = renderDivs $ Bebes
     <$> pure pid
     <*> areq (selectField bebidaCB) "Bebida: " Nothing
     <*> areq intField "Quantidade: " Nothing
+    <*> lift (liftIO (map utctDay getCurrentTime))
 
 bebidaCB :: Handler (OptionList (Key Bebida))
 bebidaCB = do
@@ -64,7 +65,7 @@ getAdagaR pid = do
                 <ul class="JOIN">
                     $forall (Entity _ bebida, Entity _ bebes, Entity _ _) <- tudo
                         <li class="JOIN2">
-                            #{bebidaNome bebida}, #{mult (bebidaPreco bebida)(fromIntegral (bebesQtbebida bebes))}
+                            #{bebidaNome bebida}, #{mult (bebidaPreco bebida)(fromIntegral (bebesQtbebida bebes))} no dia #{show $ bebesDia bebes}
                 <a href=@{HomeR}>	
                     <input class="button" type="submit" value="Voltar">
         |]

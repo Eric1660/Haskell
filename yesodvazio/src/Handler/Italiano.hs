@@ -15,6 +15,7 @@ formItaliano pid = renderDivs $ Italiano
     <$> pure pid
     <*> areq (selectField pizzaCB) "Pizza: " Nothing
     <*> areq intField "Quantidade: " Nothing
+    <*> lift (liftIO (map utctDay getCurrentTime))
 
 pizzaCB :: Handler (OptionList (Key Pizza))
 pizzaCB = do
@@ -64,7 +65,7 @@ getFornoR pid = do
                 <ul class="JOIN">
                     $forall (Entity _ pizza, Entity _ italiano, Entity _ _) <- tudo
                         <li class="JOIN2">
-                            #{pizzaNome pizza}, #{mult (pizzaPreco pizza)(fromIntegral (italianoQtpizza italiano))}
+                            #{pizzaNome pizza}, #{mult (pizzaPreco pizza)(fromIntegral (italianoQtpizza italiano))} no dia #{show $ italianoDias italiano}
                 <a href=@{HomeR}>	
                     <input class="button" type="submit" value="Voltar">
         |]
