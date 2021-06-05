@@ -54,6 +54,9 @@
                     <td>
                         <a class="btn2" href=@{EditarPizzaR pid}>
                             Editar
+                    <td>
+                        <form method=post action=@{ApagarPizzaR pid}>
+                            <input class="btn2" type="submit" value="Apagar">
 <footer class="rodape">
     <br>
     <h2>

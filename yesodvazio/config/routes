@@ -13,16 +13,19 @@
 /lanche LancheR GET POST
 /sandwich/#LancheId SandwichR GET
 /lanches ListaLancheR GET
+/lanche/#LancheId ApagarLancheR POST
 /lanche/editar/#LancheId EditarLancheR GET POST
 
 /pizza PizzaR GET POST
 /mamamia/#PizzaId MamamiaR GET
 /pizzas ListaPizzaR GET
+/pizza/#PizzaId ApagarPizzaR POST
 /pizza/editar/#PizzaId EditarPizzaR GET POST
 
 /bebida BebidaR GET POST
 /drink/#BebidaId DrinkR GET
 /bebidas ListaBebidaR GET
+/bebida/#BebidaId ApagarBebidaR POST
 /bebida/editar/#BebidaId EditarBebidaR GET POST
 
 /usuario UsuarioR GET POST

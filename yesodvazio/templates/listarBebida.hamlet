@@ -50,6 +50,9 @@
                     <td>
                         <a class="btn2" href=@{EditarBebidaR pid}>
                             Editar
+                    <td>
+                        <form method=post action=@{ApagarBebidaR pid}>
+                            <input class="btn2" type="submit" value="Apagar">
 <footer class="rodape">
     <br>
     <h2>

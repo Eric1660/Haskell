@@ -64,6 +64,11 @@ getListaLancheR = do
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/listarLanche.hamlet")
 
+postApagarLancheR :: LancheId -> Handler Html
+postApagarLancheR pid = do
+    runDB $ delete pid
+    redirect ListaLancheR
+
 getEditarLancheR :: LancheId -> Handler Html
 getEditarLancheR pid = do 
     lanche <- runDB $ get404 pid

@@ -58,6 +58,11 @@ getListaBebidaR = do
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/listarBebida.hamlet")
 
+postApagarBebidaR :: BebidaId -> Handler Html
+postApagarBebidaR pid = do
+    runDB $ delete pid
+    redirect ListaBebidaR
+
 getEditarBebidaR :: BebidaId -> Handler Html
 getEditarBebidaR pid = do 
     bebida <- runDB $ get404 pid

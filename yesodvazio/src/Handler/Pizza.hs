@@ -61,6 +61,11 @@ getListaPizzaR = do
         toWidgetHead $(luciusFile "templates/home.lucius")
         $(whamletFile "templates/listarPizza.hamlet")
 
+postApagarPizzaR :: PizzaId -> Handler Html
+postApagarPizzaR pid = do
+    runDB $ delete pid
+    redirect ListaPizzaR
+
 getEditarPizzaR :: PizzaId -> Handler Html
 getEditarPizzaR pid = do 
     pizza <- runDB $ get404 pid
