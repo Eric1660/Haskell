@@ -40,6 +40,8 @@
                     DESCRIÇÃO
                 <th>
                 
+                <th>
+
         <tbody>
             $forall Entity pid piz <- pizzas
                <tr>

@@ -37,6 +37,8 @@
                 <th>
                     DESCRIÇÃO
                 <th>
+            
+                <th>
                 
         <tbody>
             $forall Entity pid bebe <- bebidas

@@ -42,6 +42,8 @@
                     DESCRIÇÃO
                 <th>
                 
+                <th>
+                
         <tbody>
             $forall Entity pid burger <- lanches
                <tr>
