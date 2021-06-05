@@ -14,7 +14,9 @@ formPedido :: UsuarioId -> Form Pedido
 formPedido pid = renderDivs $ Pedido
     <$> pure pid
     <*> areq (selectField lancheCB) "Lanche: " Nothing
+    <*> areq intField "Quantidade: " Nothing
 
+lancheCB :: Handler (OptionList (Key Lanche))
 lancheCB = do
   lanches <- runDB $ selectList [] [Asc LancheNome]
   optionsPairs $ 
@@ -42,6 +44,9 @@ postEncomendaR pid = do
              redirect (CarrinhoR pid)
          _ -> redirect HomeR
 
+mult :: Double -> Double -> Double
+mult = (*)
+
 getCarrinhoR :: UsuarioId -> Handler Html
 getCarrinhoR pid = do 
     let sql = "SELECT ??,??,?? FROM lanche \
@@ -53,9 +58,9 @@ getCarrinhoR pid = do
     defaultLayout $ do 
         [whamlet|
             <h1>
-                CARRINHO DE #{usuarioNome usuario}
+                Carrinho de #{usuarioNome usuario}
             <ul>
                 $forall (Entity _ lanche, Entity _ pedido, Entity _ _) <- tudo
                     <li>
-                        #{lancheNome lanche}: #{lanchePreco lanche}
+                        #{lancheNome lanche}, #{mult (lanchePreco lanche)(fromIntegral (pedidoQtlanche pedido))}
         |]

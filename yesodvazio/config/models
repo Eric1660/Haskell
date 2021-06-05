@@ -1,6 +1,14 @@
 Pedido
-    userid UsuarioId
-	lanid LancheId
+    userid    UsuarioId
+    lanid     LancheId
+    qtlanche  Int
+    deriving Show
+
+Italiano
+   userid    UsuarioId
+   pizid     PizzaId
+   qtpizza   Int
+   deriving Show
 	
 Lanche
     nome  Text

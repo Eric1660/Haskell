@@ -14,6 +14,8 @@
 /lanche/editar/#LancheId EditarLancheR GET POST
 
 /pizza PizzaR GET POST
+/compra/#UsuarioId CompraR GET POST
+/forno/#UsuarioId FornoR GET
 /mamamia/#PizzaId MamamiaR GET
 /pizzas ListaPizzaR GET
 /pizza/#PizzaId ApagarPizzaR POST

@@ -13,8 +13,8 @@ formLogin :: Form (Usuario, Text)
 formLogin = renderBootstrap $ (,)
         <$> (Usuario 
             <$> areq textField "Nome: " Nothing
-			<*> areq textField "Endereço: " Nothing
-			<*> areq intField "N° " Nothing
+            <*> areq textField "Endereço: " Nothing
+            <*> areq intField "N° " Nothing
             <*> areq textField "E-mail: " Nothing
             <*> areq passwordField "Senha:  " Nothing
             )

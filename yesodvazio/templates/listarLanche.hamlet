@@ -12,9 +12,6 @@
             <a href="/lanches">
                 Lanches
         <li>
-            <a href="/encomenda/1">
-                Faça seu Pedido
-        <li>
             <a href=@{HomeR}>
                 Sobre            
     $maybe email <- usuario
@@ -63,6 +60,9 @@
                     <td>
                         <form method=post action=@{ApagarLancheR pid}>
                             <input class="btn2" type="submit" value="Apagar">
+    <a href="/encomenda/1">	
+        <input class="button" type="submit" value="Pedir Lanche">
+    <br>
 <footer class="rodape">
     <br>
     <h2>

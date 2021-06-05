@@ -27,7 +27,7 @@
         <h3 class="box">
             ^{mensa}
 
-    <form action=@{EncomendaR pid} method=post>
+    <form action=@{CompraR pid} method=post>
         ^{widget}
         <input class="button" type="submit" value="Encomendar">
     <br>
