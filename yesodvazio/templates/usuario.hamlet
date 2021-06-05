@@ -12,7 +12,7 @@
             <a href="/lanches">
                 Lanches
         <li>
-            <a href="/cliente">
+            <a href="/encomenda/1">
                 Faça seu Pedido
         <li>
             <a href=@{HomeR}>

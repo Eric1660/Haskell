@@ -5,12 +5,9 @@
 
 / HomeR GET
 
-/cliente ClientR GET POST
-/pedido/#ClienteId PedidoR GET
-/clientes ListaClieR GET
-/cliente/#ClienteId/apagar ApagarClieR POST
-
 /lanche LancheR GET POST
+/encomenda/#UsuarioId EncomendaR GET POST
+/carrinho/#UsuarioId CarrinhoR GET
 /sandwich/#LancheId SandwichR GET
 /lanches ListaLancheR GET
 /lanche/#LancheId ApagarLancheR POST

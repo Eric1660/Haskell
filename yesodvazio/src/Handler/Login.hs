@@ -11,7 +11,10 @@ import Text.Lucius
 
 formLogin :: Form Usuario
 formLogin = renderDivs $ Usuario 
-    <$> areq textField "E-mail: "  Nothing
+    <$> areq textField "Nome: " Nothing
+	<*> areq textField "Endereço: " Nothing
+	<*> areq intField "N°: " Nothing
+	<*> areq textField "E-mail: "  Nothing
     <*> areq passwordField "Senha:  "  Nothing
 
     
@@ -28,10 +31,10 @@ postAutR :: Handler Html
 postAutR = do
     ((result,_),_) <- runFormPost formLogin
     case result of
-        FormSuccess (Usuario "root@root.com" "root") -> do
+        FormSuccess (Usuario "Eric" "Rua da FATEC" 1 "root@root.com" "root") -> do
             setSession "_ID" "admin"
             redirect AdminR
-        FormSuccess (Usuario email senha) -> do
+        FormSuccess (Usuario nome endereco numero email senha) -> do
             usuarioExiste <- runDB $ getBy (UniqueEmail email)
             case usuarioExiste of
                 Nothing -> do

@@ -12,7 +12,10 @@ import Text.Lucius
 formLogin :: Form (Usuario, Text)
 formLogin = renderBootstrap $ (,)
         <$> (Usuario 
-            <$> areq textField "E-mail: " Nothing
+            <$> areq textField "Nome: " Nothing
+			<*> areq textField "Endereço: " Nothing
+			<*> areq intField "N° " Nothing
+            <*> areq textField "E-mail: " Nothing
             <*> areq passwordField "Senha:  " Nothing
             )
         <*> areq passwordField  "Confirmação da Senha: " Nothing
@@ -30,7 +33,7 @@ postUsuarioR :: Handler Html
 postUsuarioR = do
     ((result,_),_) <- runFormPost formLogin
     case result of
-        FormSuccess (usuario@(Usuario email senha), conf) -> do
+        FormSuccess (usuario@(Usuario nome endereco numero email senha), conf) -> do
             usuarioExiste <- runDB $ getBy (UniqueEmail email)
             case usuarioExiste of
                  Just _ -> do

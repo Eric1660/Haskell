@@ -8,8 +8,8 @@ module Handler.Home where
 
 import Import
 import Text.Lucius
-import Network.HTTP.Types.Status
-import Database.Persist.Postgresql
+-- import Network.HTTP.Types.Status
+-- import Database.Persist.Postgresql
 
 getHomeR :: Handler Html
 getHomeR = do

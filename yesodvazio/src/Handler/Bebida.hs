@@ -19,7 +19,7 @@ formBebida mc = renderDivs $ Bebida
 getBebidaR :: Handler Html
 getBebidaR = do
     (widget,_) <- generateFormPost (formBebida Nothing)
-    msg <- getMessage -- Handler (Maybe Text)
+    msg <- getMessage
     defaultLayout $ do
         usuario <- lookupSession "_ID"
         toWidgetHead $(luciusFile "templates/home.lucius")

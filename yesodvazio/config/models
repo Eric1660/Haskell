@@ -1,9 +1,6 @@
-Cliente
-    nome Text
-	endereco Text
-	numero Int
-	mensagem Textarea
-	deriving Show
+Pedido
+    userid UsuarioId
+	lanid LancheId
 	
 Lanche
     nome  Text
@@ -22,12 +19,14 @@ Pizza
 	
 Bebida
     nome  Text
-	preco Double
-	desc  Textarea
+    preco Double
+    desc  Textarea
 	deriving Show
 	
 Usuario
-    email Text
-    senha Text
+    nome        Text
+    endereco    Text
+    numero      Int
+    email       Text
+    senha       Text
     UniqueEmail email
-    deriving Show

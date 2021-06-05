@@ -24,15 +24,17 @@
                     #{email}: <input class="btn" type="submit" value="Sair">
 <body>
     <h2 class="box">
-        Cadastro de nova Bebida.
+        Faça aqui seu Pedido
 
     $maybe mensa <- msg
         <h3 class="box">
             ^{mensa}
 
-    <form class="box" action=@{BebidaR} method=post>
+    <form action=@{EncomendaR pid} method=post>
         ^{widget}
-        <input class="button" type="submit" value="Cadastrar">
+        <input class="button" type="submit" value="Encomendar">
+    <br>
+    
 <footer class="rodape">
     <br>
     <h2>
