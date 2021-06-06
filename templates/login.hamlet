@@ -1,0 +1,40 @@
+<header>
+    <h1>
+        Lanchonete do Haskell
+    <ul>
+        <li>
+            <a href="/bebidas">
+                Bebidas
+        <li>
+            <a href="/pizzas">
+                Pizzas
+        <li>
+            <a href="/lanches">
+                Lanches
+        <li>
+            <a href=@{HomeR}>
+                Sobre            
+    $maybe email <- usuario
+        <ul>
+            <li>
+                <form action=@{SairR} method=post>
+                    #{email}: <input class="btn" type="submit" value="Sair">
+<body>
+    <h2 class="box">
+        Por favor faça login ou Cadastre
+
+    $maybe mensa <- msg
+        <h3 class="box">
+            ^{mensa}
+
+    <form action=@{AutR} method=post>
+        ^{widget}
+        <input class="button" type="submit" value="Logar">
+    <br>
+    <a href=@{UsuarioR}>	
+        <input class="button" type="submit" value="Cadastrar">
+    <br>
+<footer class="rodape">
+    <br>
+    <h2>
+        Trabalho de Haskell

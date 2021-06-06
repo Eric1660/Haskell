@@ -1,0 +1,65 @@
+<header>
+    <h1>
+        Lanchonete do Haskell
+    <ul>
+        <li>
+            <a href="/bebidas">
+                Bebidas
+        <li>
+            <a href="/pizzas">
+                Pizzas
+        <li>
+            <a href="/lanches">
+                Lanches
+        <li>
+            <a href=@{HomeR}>
+                Sobre            
+    $maybe email <- usuario
+        <ul>
+            <li>
+                <form action=@{SairR} method=post>
+                    #{email}: <input class="btn" type="submit" value="Sair">
+<body>
+    <h2>
+        Clique na pizza para adicionar.
+    <a href="/pizza">   
+        <img class="icon" src=@{StaticR img_pizza_png}>
+    <table class="box">
+        <thead>
+            <tr>
+                <th>
+                    NOME
+                <th>
+                    BORDA
+                <th>
+                    PREÇO(R$)
+                <th>
+                    DESCRIÇÃO
+                <th>
+                
+                <th>
+
+        <tbody>
+            $forall Entity pid piz <- pizzas
+               <tr>
+                    <td>
+                        #{pizzaNome piz}
+                    <td>
+                        #{pizzaBorda piz}
+                    <td>
+                        #{pizzaPreco piz}
+                    <td>
+                        #{pizzaDesc piz}
+                    <td>
+                        <a class="btn2" href=@{EditarPizzaR pid}>
+                            Editar
+                    <td>
+                        <form method=post action=@{ApagarPizzaR pid}>
+                            <input class="btn2" type="submit" value="Apagar">
+    <a href="/compra/1">	
+        <input class="button" type="submit" value="Pedir Pizza">
+    <br>
+<footer class="rodape">
+    <br>
+    <h2>
+        Trabalho de Haskell

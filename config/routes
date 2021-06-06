@@ -1,0 +1,36 @@
+/static StaticR Static appStatic
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/ HomeR GET
+
+/lanche LancheR GET POST
+/encomenda/#UsuarioId EncomendaR GET POST
+/carrinho/#UsuarioId CarrinhoR GET
+/sandwich/#LancheId SandwichR GET
+/lanches ListaLancheR GET
+/lanche/#LancheId ApagarLancheR POST
+/lanche/editar/#LancheId EditarLancheR GET POST
+
+/pizza PizzaR GET POST
+/compra/#UsuarioId CompraR GET POST
+/forno/#UsuarioId FornoR GET
+/mamamia/#PizzaId MamamiaR GET
+/pizzas ListaPizzaR GET
+/pizza/#PizzaId ApagarPizzaR POST
+/pizza/editar/#PizzaId EditarPizzaR GET POST
+
+/bebida BebidaR GET POST
+/bebes/#UsuarioId BebesR GET POST
+/adaga/#UsuarioId AdagaR GET
+/drink/#BebidaId DrinkR GET
+/bebidas ListaBebidaR GET
+/bebida/#BebidaId ApagarBebidaR POST
+/bebida/editar/#BebidaId EditarBebidaR GET POST
+
+/usuario UsuarioR GET POST
+/login   AutR     GET POST
+/logout  SairR    POST
+
+/admin   AdminR   GET

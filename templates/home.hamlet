@@ -1,0 +1,34 @@
+<header>
+    <h1>
+        Lanchonete do Haskell
+    <ul>
+        <li>
+            <a href="/bebidas">
+                Bebidas
+        <li>
+            <a href="/pizzas">
+                Pizzas
+        <li>
+            <a href="/lanches">
+                Lanches
+        <li>
+            <a href=@{HomeR}>
+                Sobre            
+    $maybe email <- usuario
+        <ul>
+            <li>
+                <form action=@{SairR} method=post>
+                    #{email}: <input class="btn" type="submit" value="Sair">
+<body>
+    <h2 class="box">
+        A Melhor Lanchonete da Região!!!
+    <div class="box">
+        <img src=@{StaticR img_sanduba2_jpg}>
+        <img src=@{StaticR img_pizza2_jpg}>
+    <div class="box">
+        <img src=@{StaticR img_sanduba3_jpg}>
+        <img src=@{StaticR img_pizza3_jpg}>
+<footer>
+    <br>
+    <h2>
+        Trabalho de Haskell

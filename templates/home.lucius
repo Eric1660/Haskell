@@ -1,0 +1,197 @@
+* {
+   margin: 0;
+   padding: 0;
+   margin: auto;
+   box-sizing: border-box;
+}
+
+header {
+    background-color: white;
+    color: #009743;
+	width: 100%;
+	position: static;
+	top: 0;
+	margin-bottom: 3%;
+}
+	
+footer {
+    background-color: white;
+    color: #009743;
+	height: 100px;
+	width: 100%;
+	bottom: 0;
+	position: static;
+	text-align: center;
+}
+	
+body {
+    background-color: #009743;
+    color: white;
+	text-align: center;
+	width: 95%;
+}
+            
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-right: 5%;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: #009743;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li form {
+    display: block;
+    color: #009743;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #ffcb0a;
+}
+	
+h1, label {
+    float: left;
+	font-weight: 700;
+    margin-left: 5%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+	text-align: center;
+}
+
+table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: #009743;
+}
+
+table td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table td a {
+    color: white;
+	text-decoration: none;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=number]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=password]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcb0a;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.required {
+    margin-top: 1%;
+}
+
+.icon {
+    max-height: 256px;
+	max-width: 256px;
+}
+
+.button {
+    background-color: #ffcb0a;
+    border: none;
+	border-radius: 4px;
+    color: #009743;
+	display: inline-block;
+    font-size: 16px;
+    margin: 6px 3px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+	width: 200px;
+}
+
+.box {
+    margin-left: auto;
+    margin-right: auto;
+	margin-bottom: 2%;
+	margin-top: 2%;
+	text-align: center;
+}
+
+.rodape {
+    background-color: white;
+    color: #009743;
+	height: 100px;
+	width: 95%;
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+}
+
+.btn {
+    background-color: white;
+	color: #009743;
+	font-weight: 700;
+	border: none;
+	margin: 0;
+	padding: 6px 12px;
+	text-align: center;
+}
+
+.btn:hover {
+    background-color: #ffcb0a;
+}
+
+.btn2 {
+    background-color: #009743;
+	color: white;
+	font-weight: 700;
+	border: none;
+	text-align: center;
+}
+
+.JOIN {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+	margin-bottom: 3%;
+	margin-top: 3%;
+}
+
+.JOIN2 {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+

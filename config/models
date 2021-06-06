@@ -1,0 +1,49 @@
+Pedido
+   userid    UsuarioId
+   lanid     LancheId
+   qtlanche  Int
+   data       Day
+   deriving Show
+
+Italiano
+   userid    UsuarioId
+   pizid     PizzaId
+   qtpizza   Int
+   dias       Day
+   deriving Show
+ 
+Bebes
+   userid    UsuarioId
+   bebid     BebidaId
+   qtbebida  Int
+   dia       Day
+   deriving Show
+	
+Lanche
+    nome  Text
+    pao   Text
+    carne Text
+    preco Double
+    descr Textarea
+    deriving Show
+
+Pizza
+    nome  Text
+    borda Text
+    preco Double
+    desc  Textarea
+    deriving Show
+	
+Bebida
+    nome  Text
+    preco Double
+    desc  Textarea
+	deriving Show
+	
+Usuario
+    nome        Text
+    endereco    Text
+    numero      Int
+    email       Text
+    senha       Text
+    UniqueEmail email
